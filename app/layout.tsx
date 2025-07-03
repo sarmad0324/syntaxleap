@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "u_7bVNsFUzr4vrugz7yNh4M5sVlS9YvW8c-4z0q4QiM",
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
   },
@@ -115,6 +115,7 @@ export default function RootLayout({
         <meta name="organization" content="SyntaxLeap" />
         <meta name="copyright" content="SyntaxLeap" />
         <meta name="author" content="SyntaxLeap" />
+        <meta name="google-site-verification" content="u_7bVNsFUzr4vrugz7yNh4M5sVlS9YvW8c-4z0q4QiM" />
       </head>
       <body className="bg-white text-gray-900 font-inter antialiased">
         <StructuredData />

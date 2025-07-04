@@ -7,7 +7,7 @@ import { Newsletter } from "@/components/newsletter"
 import { SocialLinks } from "@/components/social-links"
 
 export const metadata: Metadata = {
-  title: "SyntaxLeap",
+  title: "SyntaxLeap | AI-Driven Digital Product Development Agency",
   description:
     "Transform your business with AI-powered digital solutions. SyntaxLeap builds custom web & mobile applications with machine learning capabilities for startups and SMEs. Get your free consultation today.",
   openGraph: {

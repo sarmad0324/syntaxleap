@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Tell crawlers where your sitemap lives
 Sitemap: https://syntaxleap.info/sitemap.xml
+
+# (Optional) If you want to slow down aggressive bots, you can add:
+# Crawl-delay: 10
+
+# Note: the non-standard Host directive is ignored by most crawlers.
+# If you need it for a specific crawler (e.g. Yandex), you can put it at the bottom:
+# Host: syntaxleap.info

@@ -1,12 +1,15 @@
-import type { Metadata } from "next"
-import { ContactHero } from "@/components/contact-hero"
-import { ContactForm } from "@/components/contact-form"
-import { ContactInfo } from "@/components/contact-info"
+// app/contact/page.tsx
+import type { Metadata } from "next";
+import { ContactHero } from "@/components/contact-hero";
+import { ContactForm } from "@/components/contact-form";
+import { ContactInfo } from "@/components/contact-info";
+
+export const config = { amp: "hybrid" };
 
 export const metadata: Metadata = {
-  title: "Contact SyntaxLeap | Get Your Free AI Consultation & Project Quote",
+  title: "Contact",
   description:
-    "Ready to transform your business with AI? Contact SyntaxLeap for a free consultation. Book a strategy call, get a custom project quote, or send us a message about your AI development needs.",
+    "Ready to transform your business with AI? Contact SyntaxLeap for a free AI strategy call or custom project quote. Get your free consultation today.",
   keywords: [
     "AI consultation",
     "free AI strategy call",
@@ -16,23 +19,31 @@ export const metadata: Metadata = {
     "digital transformation consultation",
   ],
   openGraph: {
-    title: "Contact SyntaxLeap | Free AI Consultation & Project Quote",
+    title: "Contact SyntaxLeap – Free AI Consultation & Project Quote",
     description:
       "Get in touch for your free AI strategy consultation and custom project proposal. Transform your business with AI.",
     url: "https://syntaxleap.info/contact",
     images: [
       {
-        url: "/og-contact.jpg",
+        url: "https://syntaxleap.info/og-contact.jpg",
         width: 1200,
         height: 630,
         alt: "Contact SyntaxLeap for AI Development Services",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@SyntaxLeap",
+    title: "Contact SyntaxLeap – Free AI Consultation & Project Quote",
+    description:
+      "Get in touch for your free AI strategy consultation and custom project proposal. Transform your business with AI.",
+    images: ["https://syntaxleap.info/og-contact.jpg"],
+  },
   alternates: {
     canonical: "https://syntaxleap.info/contact",
   },
-}
+};
 
 export default function ContactPage() {
   return (
@@ -47,5 +58,5 @@ export default function ContactPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

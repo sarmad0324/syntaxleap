@@ -54,7 +54,7 @@ export function Navigation() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Image src="/logo.svg" alt="SyntaxLeap" width={220} height={50} className="h-10 w-auto" />
+              <Image src="/Logo.svg" alt="SyntaxLeap" width={200} height={40}  />
             </motion.div>
           </Link>
 

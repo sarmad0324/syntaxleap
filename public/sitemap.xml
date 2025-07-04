@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage: highest priority, updated weekly -->
   <url>
-    <loc>https://syntaxleap.com</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://syntaxleap.info/</loc>
+    <lastmod>2025-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Services: medium priority -->
   <url>
-    <loc>https://syntaxleap.com/services</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://syntaxleap.info/services</loc>
+    <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- About: lower priority -->
   <url>
-    <loc>https://syntaxleap.com/about</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://syntaxleap.info/about</loc>
+    <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Contact: medium-high priority -->
   <url>
-    <loc>https://syntaxleap.com/contact</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://syntaxleap.info/contact</loc>
+    <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
 </urlset>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Globe, Smartphone, Palette, Wordpress, Users } from "lucide-react"
+import { Globe, Smartphone, Palette, Users } from "lucide-react"
 
 export function ServiceDetails() {
   const services = [
@@ -28,7 +28,7 @@ export function ServiceDetails() {
     },
     {
       id: "wordpress",
-      icon: Wordpress,
+      icon: Globe,
       title: "WordPress AI Integrations",
       description: "Transform your WordPress site with AI capabilities. We integrate machine learning features like content recommendations, chatbots, and automated content generation to enhance your website's functionality.",
       features: ["Content Automation", "AI Chatbots", "Smart Recommendations"]

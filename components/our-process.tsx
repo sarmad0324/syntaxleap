@@ -1,43 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Lightbulb, Code, Rocket, BarChart } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { Search, Palette, Code, Rocket } from "lucide-react"
 
 export function OurProcess() {
   const steps = [
     {
-      icon: Lightbulb,
-      title: "Discovery & Strategy",
-      description:
-        "We dive deep into your business needs, analyze your market, and identify AI opportunities that will drive real value.",
-      duration: "1-2 weeks",
+      icon: Search,
+      title: "Discovery",
+      description: "We analyze your business needs and identify AI opportunities that can drive real value."
+    },
+    {
+      icon: Palette,
+      title: "Design",
+      description: "Our team creates intuitive interfaces and user experiences optimized for AI-powered features."
     },
     {
       icon: Code,
-      title: "Design & Development",
-      description:
-        "Our team creates intelligent solutions using cutting-edge AI technologies, ensuring scalability and performance.",
-      duration: "4-12 weeks",
+      title: "Development",
+      description: "We build robust, scalable solutions using cutting-edge AI technologies and best practices."
     },
     {
       icon: Rocket,
-      title: "Launch & Integration",
-      description:
-        "We deploy your AI-powered solution with seamless integration into your existing systems and workflows.",
-      duration: "1-2 weeks",
-    },
-    {
-      icon: BarChart,
-      title: "Optimize & Scale",
-      description:
-        "Continuous monitoring, optimization, and scaling to ensure your AI solution evolves with your business.",
-      duration: "Ongoing",
-    },
+      title: "Deployment",
+      description: "We launch your AI solution and provide ongoing support to ensure optimal performance."
+    }
   ]
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,54 +37,66 @@ export function OurProcess() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold font-plus-jakarta mb-6 text-gray-900">
-            Our <span className="gradient-text">Process</span>
+          <h2 className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-6 text-navy">
+            Our Process
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From concept to deployment, we follow a proven methodology that ensures your AI project delivers exceptional
-            results.
+          <p className="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed">
+            We follow a proven methodology to deliver AI solutions that exceed expectations.
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="relative">
-            {/* Process Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-900 via-teal-500 to-blue-900 hidden lg:block"></div>
-
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="relative flex items-start mb-12 last:mb-0"
-              >
-                {/* Step Number & Icon */}
-                <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 bg-white border-4 border-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                    <step.icon className="w-7 h-7 text-blue-900" />
+        <div className="max-w-4xl mx-auto">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className={`flex items-center gap-8 mb-16 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+            >
+              {/* Step Content */}
+              <div className="flex-1">
+                <motion.div 
+                  className="flex items-center mb-4"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-16 h-16 bg-teal rounded-full flex items-center justify-center mr-4 shadow-lg">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-blue-900 to-teal-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {index + 1}
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="ml-8 flex-1">
-                  <Card className="bg-white p-8 rounded-3xl card-hover">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold font-plus-jakarta text-gray-900">{step.title}</h3>
-                      <span className="text-sm font-medium text-teal-600 bg-teal-50 px-3 py-1 rounded-full">
-                        {step.duration}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                  </Card>
-                </div>
+                </motion.div>
+                <h3 className="text-2xl lg:text-3xl font-bold font-plus-jakarta mb-4 text-navy">
+                  {step.title}
+                </h3>
+                <p className="text-lg text-charcoal leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+              
+              {/* Animated Illustration */}
+              <motion.div 
+                className="w-64 h-64 bg-gradient-to-br from-navy/5 to-teal/5 rounded-2xl flex items-center justify-center"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div
+                  animate={{ 
+                    rotate: 360,
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                    scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                  }}
+                >
+                  <step.icon className="w-24 h-24 text-navy/30" />
+                </motion.div>
               </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

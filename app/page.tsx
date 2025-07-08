@@ -1,26 +1,37 @@
 import type { Metadata } from "next"
 import { HeroSection } from "@/components/hero-section"
 import { WhatWeDo } from "@/components/what-we-do"
-import { FeaturedProject } from "@/components/featured-project"
 import { OurProcess } from "@/components/our-process"
+import { FeaturedProjects } from "@/components/featured-projects"
 import { Newsletter } from "@/components/newsletter"
-import { SocialLinks } from "@/components/social-links"
 
 export const metadata: Metadata = {
-  title: "SyntaxLeap | AI-Driven Digital Product Development Agency",
+  title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
   description:
-    "Transform your business with AI-powered digital solutions. SyntaxLeap builds custom web & mobile applications with machine learning capabilities for startups and SMEs. Get your free consultation today.",
+    "SyntaxLeap builds AI-driven digital products for startups and SMEs. We create intelligent web apps, mobile solutions, and provide remote AI teams to accelerate your business growth.",
+  keywords: [
+    "AI development agency",
+    "machine learning solutions",
+    "artificial intelligence",
+    "AI web apps",
+    "intelligent mobile apps",
+    "remote AI teams",
+    "startup AI solutions",
+    "SME digital transformation",
+    "custom AI development",
+    "AI-driven products",
+  ],
   openGraph: {
-    title: "SyntaxLeap",
+    title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
-      "Transform your business with AI-powered digital solutions. Custom web & mobile apps with machine learning capabilities.",
+      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     url: "https://syntaxleap.info",
     images: [
       {
-        url: "/og-home.jpg",
+        url: "https://syntaxleap.info/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "SyntaxLeap AI-Driven Digital Products",
+        alt: "SyntaxLeap AI Development Agency",
       },
     ],
   },
@@ -34,10 +45,9 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhatWeDo />
-      <FeaturedProject />
       <OurProcess />
+      <FeaturedProjects />
       <Newsletter />
-      <SocialLinks />
     </>
   )
 }

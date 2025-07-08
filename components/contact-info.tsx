@@ -70,10 +70,10 @@ export function ContactInfo() {
             <div>
               <p className="text-gray-400 text-sm">Email</p>
               <a
-                href="mailto:hello@syntaxleap.com"
+                href="mailto:hello@syntaxleap.info"
                 className="text-white hover:text-indigo-400 transition-colors duration-200 font-medium"
               >
-                hello@syntaxleap.com
+                hello@syntaxleap.info
               </a>
             </div>
           </div>

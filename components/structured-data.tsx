@@ -6,11 +6,32 @@ export default function StructuredData() {
     name: "SyntaxLeap",
     url: "https://syntaxleap.info",
     logo: "https://syntaxleap.info/logo.svg",
-    description: "AI-driven digital product development agency specializing in custom web & mobile applications powered by machine learning.",
+    description: "Leading AI development agency specializing in neural networks, deep learning, intelligent automation, and cutting-edge artificial intelligence solutions that transform businesses.",
     foundingDate: "2022-01-01",
+    industry: "Artificial Intelligence and Machine Learning Development",
+    knowsAbout: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Neural Networks",
+      "Deep Learning",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Edge AI",
+      "MLOps",
+      "AI Automation",
+      "Data Engineering"
+    ],
+    serviceType: [
+      "Neural Network Development",
+      "Intelligent Automation",
+      "AI Data Engineering",
+      "Edge AI Solutions",
+      "Machine Learning Consulting",
+      "AI Model Development"
+    ],
     founders: [
-      { "@type": "Person", name: "Sarmad Irfan", jobTitle: "CEO" },
-      { "@type": "Person", name: "Abdullah Khan", jobTitle: "CTO" },
+      { "@type": "Person", name: "Sarmad Irfan", jobTitle: "CEO & AI Strategist" },
+      { "@type": "Person", name: "Abdullah Khan", jobTitle: "CTO & ML Engineer" },
     ],
     sameAs: [
       "https://linkedin.com/company/syntax-leap",
@@ -24,6 +45,8 @@ export default function StructuredData() {
         contactType: "customer service",
         email: "hello@syntaxleap.info",
         availableLanguage: ["English"],
+        areaServed: "Worldwide",
+        serviceType: "AI Development Consultation"
       }
     ],
   };
@@ -45,10 +68,62 @@ export default function StructuredData() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://syntaxleap.info" },
-      { "@type": "ListItem", position: 2, name: "Services", item: "https://syntaxleap.info/services" },
-      { "@type": "ListItem", position: 3, name: "About", item: "https://syntaxleap.info/about" },
-      { "@type": "ListItem", position: 4, name: "Contact", item: "https://syntaxleap.info/contact" },
+      { "@type": "ListItem", position: 2, name: "AI Services", item: "https://syntaxleap.info/services" },
+      { "@type": "ListItem", position: 3, name: "About AI Team", item: "https://syntaxleap.info/about" },
+      { "@type": "ListItem", position: 4, name: "AI Consultation", item: "https://syntaxleap.info/contact" },
     ],
+  };
+
+  const services = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Development Services",
+    provider: {
+      "@type": "Organization",
+      name: "SyntaxLeap",
+      url: "https://syntaxleap.info"
+    },
+    serviceType: "Artificial Intelligence Development",
+    description: "Comprehensive AI development services including neural networks, machine learning, and intelligent automation solutions.",
+    areaServed: "Worldwide",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Neural Network Development",
+            description: "Custom neural network architectures and deep learning solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Intelligent Automation",
+            description: "AI-powered automation systems and workflow optimization"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Data Engineering",
+            description: "Machine learning operations and data pipeline solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Edge AI Solutions",
+            description: "High-performance AI applications for edge computing and IoT"
+          }
+        }
+      ]
+    }
   };
 
   return (
@@ -56,6 +131,7 @@ export default function StructuredData() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(services) }} />
     </>
   );
 }

@@ -1,0 +1,38 @@
+{
+  "name": "SyntaxLeap - AI Development Agency",
+  "short_name": "SyntaxLeap",
+  "description": "Leading AI development agency specializing in machine learning solutions for startups and SMEs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "business",
+    "technology",
+    "productivity"
+  ],
+  "lang": "en-US",
+  "orientation": "portrait-primary"
+}

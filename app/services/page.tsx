@@ -1,29 +1,26 @@
-// app/services/page.tsx
-import type { Metadata } from "next";
-import { ServicesHero } from "@/components/services-hero";
-import { ServiceDetails } from "@/components/service-details";
-import { ContactSection } from "@/components/contact-section";
-
-export const config = { amp: "hybrid" };
+import type { Metadata } from "next"
+import { ServicesHero } from "@/components/services-hero"
+import { ServiceDetails } from "@/components/service-details"
 
 export const metadata: Metadata = {
-  title: "AI Development Services – Web Apps, Mobile Solutions & Remote Teams | SyntaxLeap",
+  title: "AI Development Services | SyntaxLeap",
   description:
-    "Comprehensive AI development services including intelligent web applications, smart mobile solutions, and dedicated remote teams. From ideation to launch with cutting-edge machine learning technology.",
+    "Comprehensive AI development services including web applications, mobile apps, UI/UX design, WordPress integrations, and remote AI teams. Transform your business with SyntaxLeap's AI expertise.",
   keywords: [
-    "AI web development",
-    "smart mobile apps",
-    "remote AI teams",
+    "AI development services",
     "machine learning services",
+    "artificial intelligence consulting",
+    "AI web development",
+    "intelligent mobile apps",
+    "AI UI/UX design",
+    "WordPress AI integration",
+    "remote AI teams",
     "custom AI solutions",
-    "React development services",
-    "Next.js development",
-    "AI consulting",
   ],
   openGraph: {
-    title: "AI Development Services – SyntaxLeap",
+    title: "AI Development Services | SyntaxLeap",
     description:
-      "Custom AI-driven web & mobile apps, intelligent solutions, and remote development teams with machine learning expertise.",
+      "Comprehensive AI development services to transform your business with artificial intelligence and machine learning solutions.",
     url: "https://syntaxleap.info/services",
     images: [
       {
@@ -34,25 +31,16 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@SyntaxLeap",
-    title: "AI Development Services – SyntaxLeap",
-    description:
-      "Custom AI-driven web & mobile apps, intelligent solutions, and remote development teams with machine learning expertise.",
-    images: ["https://syntaxleap.info/og-services.jpg"],
-  },
   alternates: {
     canonical: "https://syntaxleap.info/services",
   },
-};
+}
 
 export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
       <ServiceDetails />
-      <ContactSection />
     </>
-  );
+  )
 }

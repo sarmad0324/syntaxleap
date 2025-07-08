@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Menu, X, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,42 +19,41 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact")
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
-    } else {
-      window.location.href = "/contact"
-    }
-    setIsOpen(false)
-  }
-
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ]
 
+  const serviceItems = [
+    { name: "AI Web Development", href: "/services/ai-web-development" },
+    { name: "Intelligent Mobile Apps", href: "/services/mobile-apps" },
+    { name: "UI/UX & AI Design", href: "/services/ui-ux-design" },
+    { name: "WordPress AI Integrations", href: "/services/wordpress-ai" },
+    { name: "Augmented Remote Teams", href: "/services/remote-teams" },
+  ]
+
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100" : "bg-white/80 backdrop-blur-sm"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+  <motion.header
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-white/95 backdrop-blur-md shadow-2xl border-b border-gray-100 shadow-teal/10" 
+        : "bg-gradient-to-r from-white/90 via-white/95 to-white/90 backdrop-blur-sm shadow-md shadow-teal/5"
+    }`}
+    initial={{ y: -100 }}
+    animate={{ y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center">
             <motion.div
-              className="magnetic-button"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 0 8px rgba(20, 184, 166, 0.3))" }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="relative"
             >
-              <Image src="/Logo.svg" alt="SyntaxLeap" width={200} height={40}  />
+              <Image src="/logo.svg" alt="SyntaxLeap" width={250} height={100} priority className="h-32 w-auto drop-shadow-sm" />
             </motion.div>
           </Link>
 
@@ -64,23 +63,53 @@ export function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium relative group"
+                className="text-charcoal hover:text-teal transition-colors duration-200 font-medium"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-900 to-teal-500 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <Button
-              onClick={scrollToContact}
-              className="btn-primary magnetic-button px-6 py-2 rounded-full font-medium text-white relative z-10"
+            
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
-              Book a Free AI Consultation
-            </Button>
+              <button className="flex items-center text-charcoal hover:text-teal transition-colors duration-200 font-medium">
+                Our Services
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
+                  >
+                    {serviceItems.map((service) => (
+                      <Link
+                        key={service.name}
+                        href={service.href}
+                        className="block px-4 py-2 text-charcoal hover:bg-light-gray hover:text-teal transition-colors duration-200"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
+            <Link href="/contact" className="btn-primary">
+              Let's Talk Business
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-md text-charcoal hover:text-teal transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,23 +126,32 @@ export function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-2xl mt-2 border border-gray-100">
+              <div className="px-4 pt-4 pb-4 space-y-2 bg-white border-t border-gray-100">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors duration-200"
+                    className="block py-2 text-charcoal hover:text-teal transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button
-                  onClick={scrollToContact}
-                  className="w-full mt-4 btn-primary py-2 rounded-xl font-medium text-white"
-                >
-                  Book a Free AI Consultation
-                </Button>
+                {serviceItems.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className="block py-2 pl-4 text-charcoal hover:text-teal transition-colors duration-200 text-sm"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+                <div className="pt-4">
+                  <Link href="/contact" className="btn-primary w-full text-center" onClick={() => setIsOpen(false)}>
+                    Let's Talk Business
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}

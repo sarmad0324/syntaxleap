@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
@@ -22,46 +21,45 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://syntaxleap.info"),
   title: {
-    default: "SyntaxLeap – AI-Driven Digital Product Development Agency",
+    default: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     template: "%s | SyntaxLeap",
   },
   description:
-    "SyntaxLeap builds custom AI-driven web & mobile applications to help startups and SMEs accelerate their growth with machine learning.",
+    "SyntaxLeap builds AI-driven digital products for startups and SMEs. We create intelligent web apps, mobile solutions, and provide remote AI teams to accelerate your business growth.",
   keywords: [
-    "AI development agency",
-    "machine learning development",
-    "custom web applications",
-    "mobile app development",
-    "AI-powered solutions",
-    "React development",
-    "Next.js development",
-    "digital transformation",
-    "startup technology partner",
-    "enterprise AI solutions",
+    "AI development",
+    "machine learning",
+    "artificial intelligence",
+    "AI web apps",
+    "intelligent mobile apps",
+    "remote AI teams",
+    "startup AI solutions",
+    "SME digital transformation",
+    "custom AI development",
   ],
   authors: [{ name: "SyntaxLeap", url: "https://syntaxleap.info" }],
   openGraph: {
     type: "website",
     url: "https://syntaxleap.info",
     siteName: "SyntaxLeap",
-    title: "SyntaxLeap – AI-Driven Digital Product Development Agency",
+    title: "SyntaxLeap -Expert in AI-Powered Web & Mobile Development",
     description:
-      "SyntaxLeap builds custom AI-driven web & mobile applications to help startups and SMEs accelerate their growth with machine learning.",
+      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     images: [
       {
         url: "https://syntaxleap.info/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "SyntaxLeap – AI-Driven Digital Products",
+        alt: "SyntaxLeap AI Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@SyntaxLeap",
-    title: "SyntaxLeap – AI-Driven Digital Product Development Agency",
+    title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
-      "SyntaxLeap builds custom AI-driven web & mobile applications for startups and SMEs.",
+      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with AI.",
     images: ["https://syntaxleap.info/og-home.jpg"],
   },
   robots: {
@@ -79,26 +77,40 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "u_7bVNsFUzr4vrugz7yNh4M5sVlS9YvW8c-4z0q4QiM",
-    yandex: "",
-    yahoo: "",
   },
   alternates: {
     canonical: "https://syntaxleap.info",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  other: {
+    "msapplication-TileColor": "#0f766e",
+    "theme-color": "#0f766e",
   },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0f766e" />
+        <meta name="msapplication-TileColor" content="#0f766e" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className="bg-white text-gray-900 antialiased">
         <StructuredData />
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

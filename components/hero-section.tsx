@@ -1,135 +1,170 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById("what-we-do")
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" })
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("featured-projects")
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
-      {/* Animated Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center bg-white pt-20 overflow-hidden">
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-900/5 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute top-3/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-blue-900/10 rounded-full blur-2xl animate-pulse"></div>
+        <motion.div 
+          className="absolute top-20 left-10 w-72 h-72 bg-teal/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-10 w-96 h-96 bg-navy/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+            x: [0, -30, 0],
+            y: [0, 20, 0]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/2 w-32 h-32 bg-teal/5 rounded-full blur-2xl"
+          animate={{ 
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
       </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-teal-500/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 1, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
+      
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-5xl mx-auto"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-4xl mx-auto"
         >
-          {/* Badge */}
+          {/* Animated badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-900/10 to-teal-500/10 border border-blue-900/20 rounded-full px-6 py-3 mb-8"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-flex items-center bg-teal/10 text-teal px-6 py-3 rounded-full mb-8 font-semibold"
           >
-            <Sparkles className="w-5 h-5 text-teal-500" />
-            <span className="text-sm font-medium text-blue-900">AI-Powered Development</span>
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="w-2 h-2 bg-teal rounded-full mr-3"
+            />
+            AI-Powered Innovation
           </motion.div>
-
-          {/* Main Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-reveal mb-8"
-          >
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold font-plus-jakarta leading-tight">
-              <span className="inline-block">We Build </span>
-              <span className="gradient-text inline-block">AI-Driven</span>
+          
+          {/* Main Headline with staggered animation */}
+          <div className="mb-6">
+            <motion.h1 
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta text-navy leading-tight"
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="inline-block"
+              >
+                We Build{" "}
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-teal inline-block"
+              >
+                AI-Driven
+              </motion.span>
               <br />
-              <span className="inline-block">Digital Products</span>
-            </h1>
-          </motion.div>
-
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="inline-block"
+              >
+                Digital Products
+              </motion.span>
+            </motion.h1>
+          </div>
+          
           {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
-            Custom web & mobile apps, powered by machine learning, for startups and SMEs.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
+          <motion.p 
+            className="text-xl lg:text-2xl text-charcoal mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <Button
-              onClick={scrollToServices}
-              className="btn-primary magnetic-button px-8 py-4 rounded-full font-semibold text-lg text-white hover-lift"
-            >
-              Explore Our Work
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              className="border-2 border-gray-300 text-gray-700 hover:text-gray-900 hover:border-teal-500 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-teal-50 bg-transparent magnetic-button"
-            >
-              View Case Studies
-            </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
+            We help startups and SMEs accelerate their growth with machine learning. 
+            Custom AI solutions that transform your business operations and drive results.
+          </motion.p>
+          
+          {/* CTA Buttons with hover animations */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
           >
             <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              className="w-1 h-3 bg-teal-500 rounded-full mt-2"
-            />
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Link href="/contact" className="btn-primary text-lg px-8 py-4 shadow-lg">
+                Let's Talk Business
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <button 
+                onClick={scrollToProjects}
+                className="btn-secondary text-lg px-8 py-4"
+              >
+                Explore Our Work
+              </button>
+            </motion.div>
+          </motion.div>
+          
+          {/* Floating stats */}
+          <motion.div
+            className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.4 }}
+          >
+            {[
+              { number: "50+", label: "AI Projects" },
+              { number: "99%", label: "Success Rate" },
+              { number: "24/7", label: "Support" }
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.6 + (i * 0.1) }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="text-2xl lg:text-3xl font-bold text-navy mb-2">{stat.number}</div>
+                <div className="text-charcoal text-sm">{stat.label}</div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

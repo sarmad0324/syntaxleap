@@ -1,105 +1,68 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { Linkedin, Github } from "lucide-react"
 import Image from "next/image"
 
 export function TeamSection() {
   const team = [
     {
       name: "Sarmad Irfan",
-      role: "CEO & AI Enthusiast",
-      bio: "Former AI researcher with 8+ years in machine learning and business strategy.",
-      image: "/placeholder.svg?height=300&width=300",
-      linkedin: "#",
-      github: "#",
+      role: "CEO & AI Strategist",
+      image: "/placeholder-user.jpg"
     },
     {
-      name: "Abdullah Khan",
+      name: "Abdullah Khan", 
       role: "CTO & ML Engineer",
-      bio: "Full-stack developer and ML specialist with expertise in scalable AI systems.",
-      image: "/placeholder.svg?height=300&width=300",
-      linkedin: "#",
-      github: "#",
+      image: "/placeholder-user.jpg"
     },
     {
-      name: "Sarah Chen",
+      name: "Sarah Ahmed",
       role: "Lead Data Scientist",
-      bio: "PhD in Computer Science, specializing in NLP and computer vision applications.",
-      image: "/placeholder.svg?height=300&width=300",
-      linkedin: "#",
-      github: "#",
+      image: "/placeholder-user.jpg"
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Senior Frontend Engineer",
-      bio: "React specialist with a passion for creating intuitive AI-powered user interfaces.",
-      image: "/placeholder.svg?height=300&width=300",
-      linkedin: "#",
-      github: "#",
-    },
+      name: "Michael Chen",
+      role: "AI Research Director",
+      image: "/placeholder-user.jpg"
+    }
   ]
 
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-20 bg-light-gray">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-16 text-navy text-center"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold font-plus-jakarta mb-6">
-            Meet Our <span className="gradient-text">Team</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A diverse group of AI experts, engineers, and innovators working together to build the future.
-          </p>
-        </motion.div>
-
+          Meet Our Team
+        </motion.h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="text-center hover-lift"
             >
-              <Card className="bg-slate-900/60 border-slate-700 rounded-2xl overflow-hidden card-hover group">
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold font-plus-jakarta text-white mb-1">{member.name}</h3>
-                  <p className="text-indigo-400 font-semibold mb-3">{member.role}</p>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">{member.bio}</p>
-
-                  <div className="flex space-x-3">
-                    <a
-                      href={member.linkedin}
-                      className="p-2 bg-slate-800 hover:bg-indigo-600 rounded-lg transition-colors duration-200"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={member.github}
-                      className="p-2 bg-slate-800 hover:bg-indigo-600 rounded-lg transition-colors duration-200"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              </Card>
+              <motion.div 
+                className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <h3 className="text-xl font-bold text-navy mb-2">{member.name}</h3>
+              <p className="text-teal font-semibold">{member.role}</p>
             </motion.div>
           ))}
         </div>

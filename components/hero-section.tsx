@@ -2,8 +2,23 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
+import React from "react"
 
 export function HeroSection() {
+  const images = [
+    "/meeting.jpg",
+    "/whiteboard.jpg"
+  ];
+  const [currentImage, setCurrentImage] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("featured-projects")
     if (projectsSection) {
@@ -13,37 +28,44 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white pt-20 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-teal/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-            x: [0, 50, 0],
-            y: [0, -30, 0]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-navy/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-            x: [0, -30, 0],
-            y: [0, 20, 0]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
-        />
-        <motion.div 
-          className="absolute top-1/2 left-1/2 w-32 h-32 bg-teal/5 rounded-full blur-2xl"
-          animate={{ 
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
+      {/* Dynamic background image slider */}
+      <div className="absolute inset-0 z-0">
+        {images.map((img, idx) => (
+          <motion.div
+            key={img}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: currentImage === idx ? 0.25 : 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 w-full h-full"
+            style={{ pointerEvents: 'none' }}
+          >
+            <Image
+              src={img}
+              alt="Hero background"
+              fill
+              className="object-cover object-center w-full h-full transition-all duration-1000"
+              priority={idx === 0}
+            />
+          </motion.div>
+        ))}
       </div>
+      {/* Animated floating images for extra depth */}
+      <motion.div
+        className="absolute left-0 top-1/3 w-40 h-40 z-10"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 0.7 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+      >
+        <Image src="/meeting.jpg" alt="Meeting" fill className="object-contain rounded-2xl shadow-2xl" />
+      </motion.div>
+      <motion.div
+        className="absolute right-0 bottom-10 w-40 h-40 z-10"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 0.7 }}
+        transition={{ duration: 1.5, delay: 1 }}
+      >
+        <Image src="/whiteboard.jpg" alt="Whiteboard" fill className="object-contain rounded-2xl shadow-2xl" />
+      </motion.div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

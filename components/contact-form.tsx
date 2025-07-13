@@ -60,7 +60,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="pt-32 pb-20 bg-white">
+    <section className="pt-72 pb-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

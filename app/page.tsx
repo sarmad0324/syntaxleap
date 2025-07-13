@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
       "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
-    url: "https://syntaxleap.info",
+    url: "https://www.syntaxleap.info/",
     images: [
       {
         url: "https://www.syntaxleap.info/og-home.jpg",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://syntaxleap.info",
+    canonical: "https://www.syntaxleap.info/",
   },
 }
 
@@ -44,9 +44,22 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      {/* Simple Divider */}
+      <div className="w-full flex justify-center my-12">
+        <div className="h-2 w-32 bg-gradient-to-r from-teal to-navy rounded-full shadow-lg" />
+      </div>
       <WhatWeDo />
+      <div className="w-full flex justify-center my-12">
+        <div className="h-2 w-32 bg-gradient-to-r from-navy to-teal rounded-full shadow-lg" />
+      </div>
       <OurProcess />
+      <div className="w-full flex justify-center my-12">
+        <div className="h-2 w-32 bg-gradient-to-r from-teal to-navy rounded-full shadow-lg" />
+      </div>
       <FeaturedProjects />
+      <div className="w-full flex justify-center my-12">
+        <div className="h-2 w-32 bg-gradient-to-r from-navy to-teal rounded-full shadow-lg" />
+      </div>
       <Newsletter />
     </>
   )

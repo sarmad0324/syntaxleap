@@ -165,6 +165,6 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 
 ## Contact Information for SEO
 - Primary Email: hello@syntaxleap.info
-- Website: https://syntaxleap.info
+- Website: https://www.syntaxleap.info/
 - Search Console: Submit sitemap and monitor performance
 - Analytics: Track user behavior and conversions

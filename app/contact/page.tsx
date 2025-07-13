@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "ML development inquiry",
   ],
   openGraph: {
-    title: "Contact SyntaxLeap | AI Development Consultation",
+    title: "Contact | AI Development Consultation",
     description:
       "Get in touch with SyntaxLeap for your AI development needs. Free consultation available.",
     url: "https://www.syntaxleap.info/contact",

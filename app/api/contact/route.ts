@@ -52,7 +52,7 @@ export async function POST(req: Request) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'syntaxleap@gmail.com', // must be your verified domain
+          from: 'SyntaxLeap <syntaxleap@gmail.com>', // must be your verified domain
           to: [email],
           subject: "We've received your message!",
           html: `<p>Hi ${name},</p>

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     images: [
       {
-        url: "https://syntaxleap.info/og-home.jpg",
+        url: "https://www.syntaxleap.info/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "SyntaxLeap AI Development Agency",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
       "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with AI.",
-    images: ["https://syntaxleap.info/og-home.jpg"],
+    images: ["https://www.syntaxleap.info/og-home.jpg"],
   },
   robots: {
     index: true,
@@ -102,6 +102,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f766e" />
         <meta name="msapplication-TileColor" content="#0f766e" />

@@ -22,4 +22,4 @@ Disallow: /admin/
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://syntaxleap.info/sitemap.xml
+Sitemap: https://www.syntaxleap.info/sitemap.xml

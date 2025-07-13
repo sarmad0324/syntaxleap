@@ -50,10 +50,10 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 - [ ] Test Twitter Card tags using Twitter Card Validator
 
 ### 3. Technical SEO
-- [ ] Test `robots.txt` at `https://syntaxleap.info/robots.txt`
-- [ ] Test `sitemap.xml` at `https://syntaxleap.info/sitemap.xml`
+- [ ] Test `robots.txt` at `https://www.syntaxleap.info/robots.txt`
+- [ ] Test `sitemap.xml` at `https://www.syntaxleap.info/sitemap.xml`
 - [ ] Verify all pages are included in sitemap
-- [ ] Test `manifest.json` at `https://syntaxleap.info/manifest.json`
+- [ ] Test `manifest.json` at `https://www.syntaxleap.info/manifest.json`
 
 ### 4. Structured Data
 - [ ] Test structured data using Google Rich Results Test

@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "AI Web Development Services | SyntaxLeap",
     description:
       "Professional AI web development services with machine learning integration and intelligent automation.",
-    url: "https://syntaxleap.info/services/ai-web-development",
+    url: "https://www.syntaxleap.info/services/ai-web-development",
   },
   alternates: {
-    canonical: "https://syntaxleap.info/services/ai-web-development",
+    canonical: "https://www.syntaxleap.info/services/ai-web-development",
   },
 }
 

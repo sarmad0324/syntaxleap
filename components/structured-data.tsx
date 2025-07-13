@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "SyntaxLeap",
     url: "https://syntaxleap.info",
-    logo: "https://syntaxleap.info/logo.svg",
+    logo: "https://www.syntaxleap.info/logo.svg",
     description: "Leading AI development agency specializing in neural networks, deep learning, intelligent automation, and cutting-edge artificial intelligence solutions that transform businesses.",
     foundingDate: "2022-01-01",
     industry: "Artificial Intelligence and Machine Learning Development",
@@ -41,9 +41,9 @@ export default function StructuredData() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+92-123-4567890",
+        telephone: "+92 336 8486356",
         contactType: "customer service",
-        email: "hello@syntaxleap.info",
+        email: "hello@syntaxleap.com",
         availableLanguage: ["English"],
         areaServed: "Worldwide",
         serviceType: "AI Development Consultation"
@@ -58,7 +58,7 @@ export default function StructuredData() {
     url: "https://syntaxleap.info",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://syntaxleap.info/?s={search_term_string}",
+      target: "https://www.syntaxleap.info/?s={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -68,9 +68,9 @@ export default function StructuredData() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://syntaxleap.info" },
-      { "@type": "ListItem", position: 2, name: "AI Services", item: "https://syntaxleap.info/services" },
-      { "@type": "ListItem", position: 3, name: "About AI Team", item: "https://syntaxleap.info/about" },
-      { "@type": "ListItem", position: 4, name: "AI Consultation", item: "https://syntaxleap.info/contact" },
+      { "@type": "ListItem", position: 2, name: "AI Services", item: "https://www.syntaxleap.info/services" },
+      { "@type": "ListItem", position: 3, name: "About AI Team", item: "https://www.syntaxleap.info/about" },
+      { "@type": "ListItem", position: 4, name: "AI Consultation", item: "https://www.syntaxleap.info/contact" },
     ],
   };
 

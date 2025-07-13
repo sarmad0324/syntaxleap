@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     title: "About SyntaxLeap | AI Development Team",
     description:
       "Learn about SyntaxLeap's mission to democratize AI for businesses and meet our expert team.",
-    url: "https://syntaxleap.info/about",
+    url: "https://www.syntaxleap.info/about",
     images: [
       {
-        url: "https://syntaxleap.info/og-about.jpg",
+        url: "https://www.syntaxleap.info/og-about.jpg",
         width: 1200,
         height: 630,
         alt: "About SyntaxLeap AI Team",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://syntaxleap.info/about",
+    canonical: "https://www.syntaxleap.info/about",
   },
 }
 

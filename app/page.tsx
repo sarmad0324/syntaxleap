@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://syntaxleap.info",
     images: [
       {
-        url: "https://syntaxleap.info/og-home.jpg",
+        url: "https://www.syntaxleap.info/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "SyntaxLeap AI Development Agency",

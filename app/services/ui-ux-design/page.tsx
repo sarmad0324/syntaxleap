@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "UI/UX & AI Design Services | SyntaxLeap",
     description:
       "Professional UI/UX design services with AI integration and intelligent user experience optimization.",
-    url: "https://syntaxleap.info/services/ui-ux-design",
+    url: "https://www.syntaxleap.info/services/ui-ux-design",
   },
   alternates: {
-    canonical: "https://syntaxleap.info/services/ui-ux-design",
+    canonical: "https://www.syntaxleap.info/services/ui-ux-design",
   },
 }
 

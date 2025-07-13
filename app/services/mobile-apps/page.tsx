@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "Intelligent Mobile Apps Development | SyntaxLeap",
     description:
       "Professional AI-powered mobile app development with machine learning integration and intelligent features.",
-    url: "https://syntaxleap.info/services/mobile-apps",
+    url: "https://www.syntaxleap.info/services/mobile-apps",
   },
   alternates: {
-    canonical: "https://syntaxleap.info/services/mobile-apps",
+    canonical: "https://www.syntaxleap.info/services/mobile-apps",
   },
 }
 

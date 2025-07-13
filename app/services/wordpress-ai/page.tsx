@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "WordPress AI Integrations | SyntaxLeap",
     description:
       "Transform your WordPress site with AI capabilities and intelligent automation features.",
-    url: "https://syntaxleap.info/services/wordpress-ai",
+    url: "https://www.syntaxleap.info/services/wordpress-ai",
   },
   alternates: {
-    canonical: "https://syntaxleap.info/services/wordpress-ai",
+    canonical: "https://www.syntaxleap.info/services/wordpress-ai",
   },
 }
 

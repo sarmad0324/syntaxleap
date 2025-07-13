@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: "AR Remote Team Services | SyntaxLeap - Augmented Reality Development",
     description:
       "Get a dedicated AR development team with SyntaxLeap. Our remote augmented reality specialists build immersive experiences and cutting-edge AR solutions.",
-    url: "https://syntaxleap.info/services/ar-remote-team",
+    url: "https://www.syntaxleap.info/services/ar-remote-team",
     images: [
       {
-        url: "https://syntaxleap.info/og-ar-remote-team.jpg",
+        url: "https://www.syntaxleap.info/og-ar-remote-team.jpg",
         width: 1200,
         height: 630,
         alt: "SyntaxLeap AR Remote Team Services",
@@ -19,6 +19,6 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://syntaxleap.info/services/ar-remote-team",
+    canonical: "https://www.syntaxleap.info/services/ar-remote-team",
   },
 } 

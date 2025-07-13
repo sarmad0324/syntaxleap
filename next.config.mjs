@@ -44,7 +44,7 @@ const nextConfig = {
     return [
       {
         source: '/syntaxleap.info/:path*',
-        destination: 'https://syntaxleap.info/:path*',
+        destination: 'https://www.syntaxleap.info/:path*',
         permanent: true,
       },
     ]

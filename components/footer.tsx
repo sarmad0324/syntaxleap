@@ -109,10 +109,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-gray-300 mb-2">
-                <span className="text-teal font-semibold">Email:</span> hello@sendtechsleep.com
+                <span className="text-teal font-semibold">Email:</span> hello@syntaxleap.com
               </p>
               <p className="text-gray-300">
-                <span className="text-teal font-semibold">Phone:</span> +1 (555) 123-4567
+                <span className="text-teal font-semibold">Phone:</span> +92 336 8486356
               </p>
             </div>
             <p className="text-gray-300">

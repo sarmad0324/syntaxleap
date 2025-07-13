@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "SyntaxLeap",
     url: "https://www.syntaxleap.info",
-    logo: "https://www.syntaxleap.info/logo.svg",
+    logo: "https://www.syntaxleap.info/favicon.ico",
     description: "Leading AI development agency specializing in neural networks, deep learning, intelligent automation, and cutting-edge artificial intelligence solutions that transform businesses.",
     foundingDate: "2022-01-01",
     industry: "Artificial Intelligence and Machine Learning Development",

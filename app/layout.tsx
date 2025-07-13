@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | SyntaxLeap",
   },
   description:
-    "SyntaxLeap builds AI-driven digital products for startups and SMEs. We create intelligent web apps, mobile solutions, and provide remote AI teams to accelerate your business growth.",
+    "SyntaxLeap builds AI-Powered digital products for startups and SMEs. We create intelligent web apps, mobile solutions, and provide remote AI teams to accelerate your business growth.",
   keywords: [
     "AI development",
     "machine learning",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "SyntaxLeap",
     title: "SyntaxLeap -Expert in AI-Powered Web & Mobile Development",
     description:
-      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
+      "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     images: [
       {
         url: "https://www.syntaxleap.info/og-home.jpg",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     site: "@SyntaxLeap",
     title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
-      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with AI.",
+      "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with AI.",
     images: ["https://www.syntaxleap.info/og-home.jpg"],
   },
   robots: {
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "yntaxLeap - Expert in AI-Powered Web & Mobile Development",
+              "name": "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
               "url": "https://www.syntaxleap.info",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -135,7 +135,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </Script>
      
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f766e" />
         <meta name="msapplication-TileColor" content="#0f766e" />

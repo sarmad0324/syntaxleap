@@ -47,9 +47,9 @@ export const metadata: Metadata = {
       "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     images: [
       {
-        url: "https://www.syntaxleap.info/og-home.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://www.syntaxleap.info/SyntaxLeap.png",
+        width: 512,
+        height: 512,
         alt: "SyntaxLeap AI Development Agency",
       },
     ],
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
       "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with AI.",
-    images: ["https://www.syntaxleap.info/og-home.jpg"],
+    images: ["https://www.syntaxleap.info/SyntaxLeap.png"],
   },
   robots: {
     index: true,
@@ -83,13 +83,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/SyntaxLeap.png", sizes: "any" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/SyntaxLeap.png",
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/SyntaxLeap.png", sizes: "512x512", type: "image/png" },
     ],
   },
   other: {
@@ -134,7 +132,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           `}
         </Script>
      
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/SyntaxLeap.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f766e" />
         <meta name="msapplication-TileColor" content="#0f766e" />

@@ -29,16 +29,16 @@ export function ServiceDetails() {
     {
       id: "wordpress",
       icon: Globe,
-      title: "WordPress AI Integrations",
-      description: "Transform your WordPress site with AI capabilities. We integrate machine learning features like content recommendations, chatbots, and automated content generation to enhance your website's functionality.",
-      features: ["Content Automation", "AI Chatbots", "Smart Recommendations"]
+      title: "WordPress Development",
+      description: "Professional WordPress development services. We build custom themes, plugins, and scalable solutions to power your business website.",
+      features: ["Custom Themes", "Plugin Development", "Performance Optimization"]
     },
     {
       id: "teams",
       icon: Users,
-      title: "Augmented Remote Teams",
-      description: "Dedicated AI specialists who work as an extension of your team. Our remote developers, data scientists, and ML engineers collaborate seamlessly with your in-house team to deliver exceptional results.",
-      features: ["Vetted AI Specialists", "Seamless Integration", "Agile Methodology"]
+      title: "Remote Teams",
+      description: "Scale your business with dedicated remote teams. Our developers, designers, and specialists work as an extension of your in-house team to deliver exceptional results.",
+      features: ["Vetted Talent", "Seamless Integration", "Agile Methodology"]
     }
   ]
 

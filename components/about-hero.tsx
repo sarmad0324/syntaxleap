@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 
 export function AboutHero() {
   return (
-    <section className="relative pt-72 pb-28 overflow-hidden bg-gradient-to-br from-white via-blue-50 to-teal-50">
+    <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none select-none">
+      <div className="absolute inset-0 pointer-events-none select-none opacity-20">
         <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-teal/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -18,7 +18,7 @@ export function AboutHero() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-navy/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-green-500/20 rounded-full blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             rotate: [360, 180, 0],
@@ -28,7 +28,7 @@ export function AboutHero() {
           transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/2 w-32 h-32 bg-teal/5 rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/2 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"
           animate={{ 
             scale: [1, 1.5, 1],
             opacity: [0.3, 0.8, 0.3]
@@ -42,12 +42,12 @@ export function AboutHero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center bg-teal/10 text-teal px-6 py-3 rounded-full mb-8 font-semibold shadow-md"
+          className="inline-flex items-center bg-blue-500/10 border border-blue-500/20 text-blue-400 px-6 py-3 rounded-full mb-8 font-semibold shadow-md"
         >
           <motion.span
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="w-2 h-2 bg-teal rounded-full mr-3"
+            className="w-2 h-2 bg-blue-400 rounded-full mr-3"
           />
           Creativity meets technology
         </motion.div>
@@ -56,16 +56,16 @@ export function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta mb-6 text-navy leading-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta mb-6 text-white leading-tight"
         >
-          About SyntaxLeap
+          About <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">SyntaxLeap</span>
         </motion.h1>
         {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl lg:text-2xl text-charcoal leading-relaxed max-w-3xl mx-auto mb-12"
+          className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-12"
         >
           We're on a mission to democratize artificial intelligence for businesses of all sizes. Our team of AI specialists helps startups and SMEs harness the power of machine learning to drive growth and innovation.
         </motion.p>
@@ -89,8 +89,8 @@ export function AboutHero() {
               transition={{ duration: 0.6, delay: 1 + (i * 0.1) }}
               whileHover={{ scale: 1.1 }}
             >
-              <div className="text-3xl lg:text-4xl font-bold text-navy mb-2">{stat.number}</div>
-              <div className="text-charcoal text-base lg:text-lg">{stat.label}</div>
+              <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
+              <div className="text-gray-400 text-base lg:text-lg">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

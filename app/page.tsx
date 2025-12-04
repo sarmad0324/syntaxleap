@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
 import { HeroSection } from "@/components/hero-section"
 import { WhatWeDo } from "@/components/what-we-do"
+import { WhyAIAutomation } from "@/components/why-ai-automation"
+import { RemoteTeamsSection } from "@/components/remote-teams-section"
 import { OurProcess } from "@/components/our-process"
-import { FeaturedProjects } from "@/components/featured-projects"
+import { ShowcaseSection } from "@/components/showcase-section"
 import { Newsletter } from "@/components/newsletter"
 
 export const metadata: Metadata = {
@@ -44,22 +46,17 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      {/* Simple Divider */}
-      <div className="w-full flex justify-center my-12">
-        <div className="h-2 w-32 bg-gradient-to-r from-teal to-navy rounded-full shadow-lg" />
-      </div>
+      {/* Services Overview */}
       <WhatWeDo />
-      <div className="w-full flex justify-center my-12">
-        <div className="h-2 w-32 bg-gradient-to-r from-navy to-teal rounded-full shadow-lg" />
-      </div>
+      {/* Why AI & Automation */}
+      <WhyAIAutomation />
+      {/* Remote Teams Section */}
+      <RemoteTeamsSection />
+      {/* Our Process */}
       <OurProcess />
-      <div className="w-full flex justify-center my-12">
-        <div className="h-2 w-32 bg-gradient-to-r from-teal to-navy rounded-full shadow-lg" />
-      </div>
-      <FeaturedProjects />
-      <div className="w-full flex justify-center my-12">
-        <div className="h-2 w-32 bg-gradient-to-r from-navy to-teal rounded-full shadow-lg" />
-      </div>
+      {/* Showcase Section */}
+      <ShowcaseSection />
+      {/* Newsletter */}
       <Newsletter />
     </>
   )

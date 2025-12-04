@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white py-16">
+    <footer className="bg-slate-900 border-t border-slate-800 text-white py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -26,19 +26,22 @@ export function Footer() {
             <div className="flex space-x-4">
               <Link
                 href="https://github.com/syntaxleap"
-                className="text-gray-300 hover:text-teal transition-colors duration-200"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                aria-label="GitHub"
               >
                 <Github className="w-6 h-6" />
               </Link>
               <Link
                 href="https://twitter.com/syntaxleap"
-                className="text-gray-300 hover:text-teal transition-colors duration-200"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                aria-label="Twitter"
               >
                 <Twitter className="w-6 h-6" />
               </Link>
               <Link
                 href="https://linkedin.com/company/syntax-leap"
-                className="text-gray-300 hover:text-teal transition-colors duration-200"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </Link>
@@ -50,22 +53,32 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/portfolio" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/blog" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   Contact
                 </Link>
               </li>
@@ -77,27 +90,27 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/ai-web-development" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services/ai-web-development" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   AI Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/mobile-apps" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services/mobile-apps" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   Intelligent Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link href="/services/ui-ux-design" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services/ui-ux-design" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   UI/UX & AI Design
                 </Link>
               </li>
               <li>
-                <Link href="/services/wordpress-ai" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services/wordpress-ai" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   WordPress AI Integrations
                 </Link>
               </li>
               <li>
-                <Link href="/services/remote-teams" className="text-gray-300 hover:text-teal transition-colors duration-200">
+                <Link href="/services/remote-teams" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                   Augmented Remote Teams
                 </Link>
               </li>
@@ -105,17 +118,29 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8">
+        <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
-              <p className="text-gray-300 mb-2">
-                <span className="text-teal font-semibold">Email:</span> hello@syntaxleap.com
+              <p className="text-gray-400 mb-2">
+                <span className="text-blue-400 font-semibold">Email:</span>{' '}
+                <a
+                  href="mailto:hello@syntaxleap.com"
+                  className="hover:text-blue-400 transition-colors duration-200"
+                >
+                  hello@syntaxleap.com
+                </a>
               </p>
-              <p className="text-gray-300">
-                <span className="text-teal font-semibold">Phone:</span> +92 336 8486356
+              <p className="text-gray-400">
+                <span className="text-blue-400 font-semibold">Phone:</span>{' '}
+                <a
+                  href="tel:+923368486356"
+                  className="hover:text-blue-400 transition-colors duration-200"
+                >
+                  +92 336 8486356
+                </a>
               </p>
             </div>
-            <p className="text-gray-300">
+            <p className="text-gray-400">
               © {new Date().getFullYear()} SyntaxLeap. All rights reserved.
             </p>
           </div>

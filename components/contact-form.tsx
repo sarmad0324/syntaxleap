@@ -60,19 +60,19 @@ export function ContactForm() {
   }
 
   return (
-    <section className="pt-72 pb-20 bg-white">
+    <section className="pt-24 sm:pt-28 pb-16 sm:pb-20 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="text-5xl lg:text-6xl font-bold font-plus-jakarta mb-6 text-navy">
-            Let's Talk Business
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6 text-white">
+            Get Your <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Free Consultation</span>
           </h1>
-          <p className="text-xl text-charcoal leading-relaxed">
-            Ready to transform your business with AI? Tell us about your project and we'll get back to you with a tailored solution.
+          <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Ready to transform your business with AI? Tell us about your project and we'll get back to you within 24 hours with a tailored solution.
           </p>
         </motion.div>
 
@@ -80,7 +80,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-teal/10 text-teal p-8 rounded-xl text-center max-w-md mx-auto"
+            className="bg-green-500/10 text-green-400 p-6 sm:p-8 rounded-xl text-center max-w-md mx-auto border border-green-500/20"
           >
             <h3 className="text-xl font-bold mb-4">Message Sent!</h3>
             <p>{message}</p>
@@ -95,7 +95,7 @@ export function ContactForm() {
           >
             {/* Service Selection */}
             <div>
-              <label className="block text-lg font-semibold text-navy mb-4">
+              <label className="block text-base sm:text-lg font-bold text-white mb-4">
                 What service are you interested in?
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -104,10 +104,10 @@ export function ContactForm() {
                     key={service}
                     type="button"
                     onClick={() => handleChange("service", service)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-medium ${
+                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${
                       formData.service === service
-                        ? "border-teal bg-teal text-white"
-                        : "border-gray-300 text-charcoal hover:border-teal"
+                        ? "border-blue-500 bg-blue-500 text-white"
+                        : "border-slate-700 text-gray-300 hover:border-blue-500 bg-slate-800/50"
                     }`}
                   >
                     {service}
@@ -119,8 +119,8 @@ export function ContactForm() {
             {/* Name and Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-lg font-semibold text-navy mb-2">
-                  Name
+                <label htmlFor="name" className="block text-base sm:text-lg font-bold text-white mb-2">
+                  Name *
                 </label>
                 <input
                   type="text"
@@ -128,13 +128,13 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal text-lg"
+                  className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500"
                   placeholder="Your full name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-lg font-semibold text-navy mb-2">
-                  Email
+                <label htmlFor="email" className="block text-base sm:text-lg font-bold text-white mb-2">
+                  Email *
                 </label>
                 <input
                   type="email"
@@ -142,7 +142,7 @@ export function ContactForm() {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal text-lg"
+                  className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500"
                   placeholder="your@email.com"
                 />
               </div>
@@ -150,24 +150,24 @@ export function ContactForm() {
 
             {/* Project Description */}
             <div>
-              <label htmlFor="project" className="block text-lg font-semibold text-navy mb-2">
-                Tell us about your project
+              <label htmlFor="project" className="block text-base sm:text-lg font-bold text-white mb-2">
+                Tell us about your project *
               </label>
               <textarea
                 id="project"
                 value={formData.project}
                 onChange={(e) => handleChange("project", e.target.value)}
                 required
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal text-lg resize-none"
+                rows={5}
+                className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500 resize-none"
                 placeholder="Describe your project, goals, and any specific requirements..."
               />
             </div>
 
             {/* Budget */}
             <div>
-              <label className="block text-lg font-semibold text-navy mb-4">
-                Budget Range
+              <label className="block text-base sm:text-lg font-bold text-white mb-4">
+                Budget Range (Optional)
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {budgets.map((budget) => (
@@ -175,9 +175,9 @@ export function ContactForm() {
                     key={budget}
                     type="button"
                     onClick={() => handleChange("budget", budget)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-medium ${formData.budget === budget
-                        ? "border-teal bg-teal text-white"
-                        : "border-gray-300 text-charcoal hover:border-teal"
+                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${formData.budget === budget
+                        ? "border-blue-500 bg-blue-500 text-white"
+                        : "border-slate-700 text-gray-300 hover:border-blue-500 bg-slate-800/50"
                     }`}
                   >
                     {budget}
@@ -191,28 +191,35 @@ export function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary text-xl px-12 py-4 disabled:opacity-50"
+                className="btn-primary text-base sm:text-lg px-10 sm:px-12 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending Request..." : "Send Request"}
+                {isSubmitting ? "Sending Request..." : "Get Free Consultation"}
               </button>
             </div>
           </motion.form>
         )}
 
-        {/* Support Info */}
+        {/* Reassurance */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 bg-slate-800/50 rounded-xl p-6 sm:p-8 border border-slate-700"
         >
-          <p className="text-charcoal mb-2">
-            Or email us directly at{" "}
-            <a href="mailto:hello@syntaxleap.info" className="text-teal font-semibold">
-              hello@syntaxleap.info
-            </a>
-          </p>
-          <p className="text-gray-500">We'll get back to you within 24 hours.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="text-2xl font-bold text-blue-400 mb-2">24/7</div>
+              <div className="text-sm text-gray-400">Support Available</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-green-400 mb-2">24hrs</div>
+              <div className="text-sm text-gray-400">Response Time</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-blue-400 mb-2">100%</div>
+              <div className="text-sm text-gray-400">Privacy Guaranteed</div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

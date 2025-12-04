@@ -11,36 +11,61 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#11163F", // Your logo's dark blue
-          950: "#0c0a02b",
+          DEFAULT: "#2563EB", // Modern blue
+          50: "#EFF6FF",
+          100: "#DBEAFE",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#2563EB",
+          600: "#1D4ED8",
+          700: "#1E40AF",
+          800: "#1E3A8A",
+          900: "#1E3A8A",
         },
-        secondary: {
-          50: "#f0fdfa",
-          100: "#ccfbf1",
-          200: "#99f6e4",
-          300: "#5eead4",
-          400: "#2dd4bf",
-          500: "#12A5AD", // Your logo's teal
-          600: "#0d9488",
-          700: "#0f766e",
-          800: "#115e59",
-          900: "#134e4a",
-          950: "#042f2e",
+        accent: {
+          DEFAULT: "#3DBF7A", // Green from logo
+          50: "#E8F8F0",
+          100: "#D1F1E1",
+          200: "#A3E3C3",
+          300: "#75D5A5",
+          400: "#47C787",
+          500: "#3DBF7A",
+          600: "#2FA866",
+          700: "#219152",
+          800: "#137A3E",
+          900: "#05632A",
         },
         blue: {
-          900: "#11163F", // Your logo's dark blue
+          DEFAULT: "#2563EB",
+          light: "#3B82F6",
+          dark: "#1E40AF",
+        },
+        green: {
+          DEFAULT: "#3DBF7A",
+          light: "#47C787",
+          dark: "#2FA866",
+        },
+        background: {
+          DEFAULT: "#FAFAFA",
+          light: "#FFFFFF",
+        },
+        text: {
+          DEFAULT: "#1F2937",
+          light: "#6B7280",
+          lighter: "#9CA3AF",
+        },
+        // Legacy colors for backward compatibility
+        navy: {
+          DEFAULT: "#1B2951",
+          900: "#11163F",
         },
         teal: {
-          500: "#12A5AD", // Your logo's teal
+          DEFAULT: "#12A5AD",
+          500: "#12A5AD",
+        },
+        charcoal: {
+          DEFAULT: "#2D2D2D",
         },
       },
       fontFamily: {

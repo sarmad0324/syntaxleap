@@ -21,7 +21,7 @@ export function Newsletter() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-600 to-green-600 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,10 +30,10 @@ export function Newsletter() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-6 text-navy">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6">
             Stay Updated with AI Insights
           </h2>
-          <p className="text-xl text-charcoal mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl mb-8 leading-relaxed opacity-90">
             Get the latest AI trends, case studies, and insights delivered to your inbox.
           </p>
           
@@ -41,7 +41,7 @@ export function Newsletter() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-teal/10 text-teal p-4 rounded-lg mb-8"
+              className="bg-white/20 text-white p-4 rounded-lg mb-8"
             >
               {message}
             </motion.div>
@@ -60,12 +60,12 @@ export function Newsletter() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal"
+                className="flex-1 px-4 py-3 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white bg-white/10 text-white placeholder-white/70"
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary px-6 py-3 whitespace-nowrap"
+                className="bg-white text-primary hover:bg-gray-100 px-6 py-3 whitespace-nowrap rounded-lg font-bold transition-colors disabled:opacity-50"
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </button>

@@ -2,194 +2,153 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
-import React from "react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 export function HeroSection() {
-  const images = [
-    "/meeting.jpg",
-    "/whiteboard.jpg"
-  ];
-  const [currentImage, setCurrentImage] = React.useState(0);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("featured-projects")
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-white pt-20 overflow-hidden">
-      {/* Dynamic background image slider */}
-      <div className="absolute inset-0 z-0">
-        {images.map((img, idx) => (
-          <motion.div
-            key={img}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: currentImage === idx ? 0.25 : 0 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0 w-full h-full"
-            style={{ pointerEvents: 'none' }}
-          >
-            <Image
-              src={img}
-              alt="Hero background"
-              fill
-              className="object-cover object-center w-full h-full transition-all duration-1000"
-              priority={idx === 0}
-            />
-          </motion.div>
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-24 sm:pt-28 overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
-      {/* Animated floating images for extra depth */}
-      <motion.div
-        className="absolute left-0 top-1/3 w-40 h-40 z-10"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.7 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-      >
-        <Image src="/meeting.jpg" alt="Meeting" fill className="object-contain rounded-2xl shadow-2xl" />
-      </motion.div>
-      <motion.div
-        className="absolute right-0 bottom-10 w-40 h-40 z-10"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.7 }}
-        transition={{ duration: 1.5, delay: 1 }}
-      >
-        <Image src="/whiteboard.jpg" alt="Whiteboard" fill className="object-contain rounded-2xl shadow-2xl" />
-      </motion.div>
+
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Animated badge */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center bg-teal/10 text-teal px-6 py-3 rounded-full mb-8 font-semibold"
-          >
-            <motion.span
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="w-2 h-2 bg-teal rounded-full mr-3"
-            />
-            AI-Powered Innovation
-          </motion.div>
-          
-          {/* Main Headline with staggered animation */}
-          <div className="mb-6">
-            <motion.h1 
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta text-navy leading-tight"
-            >
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="inline-block"
-              >
-                We Build{" "}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-teal inline-block"
-              >
-                AI-Driven
-              </motion.span>
-              <br />
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="inline-block"
-              >
-                Digital Products
-              </motion.span>
-            </motion.h1>
-          </div>
-          
-          {/* Subheadline */}
-          <motion.p 
-            className="text-xl lg:text-2xl text-charcoal mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center mb-12"
           >
-            We help startups and SMEs accelerate their growth with machine learning. 
-            Custom AI solutions that transform your business operations and drive results.
-          </motion.p>
-          
-          {/* CTA Buttons with hover animations */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
+            {/* Badge */}
             <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-full mb-8 text-sm font-medium"
             >
-              <Link href="/contact" className="btn-primary text-lg px-8 py-4 shadow-lg">
-                Let's Talk Business
+              <Sparkles className="w-4 h-4" />
+              <span>AI-Powered Development Agency</span>
+            </motion.div>
+            
+            {/* Main Headline */}
+            <motion.h1 
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-inter text-white mb-6 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              We Build{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+                AI-Powered
+              </span>
+              <br />
+              Digital Solutions
+            </motion.h1>
+            
+            {/* Subheadline */}
+            <motion.p 
+              className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              We don't just build software—we solve your biggest business challenges. Whether you're expanding into new markets, enhancing customer experiences, or unlocking the power of data, our tailored solutions empower you to achieve more.
+            </motion.p>
+            
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <Link 
+                href="/contact"
+                className="group bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105"
+              >
+                Get Free Consultation
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                href="/portfolio"
+                className="group bg-transparent border-2 border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 hover:scale-105"
+              >
+                View Our Work
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
+
+            {/* Trust Indicators */}
             <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
             >
-              <button 
-                onClick={scrollToProjects}
-                className="btn-secondary text-lg px-8 py-4"
-              >
-                Explore Our Work
-              </button>
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-green-400 border-2 border-slate-800"></div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <span className="text-gray-400 text-sm">TRUSTED BY 500+ CLIENTS</span>
+              </div>
+            </motion.div>
+
+            {/* Stats Grid */}
+            <motion.div
+              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              {[
+                { number: "50+", label: "AI Projects" },
+                { number: "99%", label: "Success Rate" },
+                { number: "24/7", label: "Support" }
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
-          
-          {/* Floating stats */}
-          <motion.div
-            className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4 }}
-          >
-            {[
-              { number: "50+", label: "AI Projects" },
-              { number: "99%", label: "Success Rate" },
-              { number: "24/7", label: "Support" }
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.6 + (i * 0.1) }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="text-2xl lg:text-3xl font-bold text-navy mb-2">{stat.number}</div>
-                <div className="text-charcoal text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-gray-600 rounded-full flex items-start justify-center p-2"
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1.5 h-1.5 bg-gray-400 rounded-full"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

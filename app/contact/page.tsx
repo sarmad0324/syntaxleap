@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { ContactForm } from "@/components/contact-form"
+import { ContactInfo } from "@/components/contact-info"
 
 export const metadata: Metadata = {
-  title: "Contact | AI Development Consultation",
+  title: "Contact Us | Get Free Consultation | SyntaxLeap",
   description:
-    "Get in touch with SyntaxLeap for your AI development needs. Free consultation for startups and SMEs looking to implement machine learning solutions.",
+    "Get in touch with SyntaxLeap for your AI development needs. Free consultation for startups and SMEs. 24/7 support, privacy guaranteed, and quick response times.",
   keywords: [
     "AI consultation",
     "machine learning consultation",
@@ -34,5 +35,10 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  return <ContactForm />
+  return (
+    <>
+      <ContactForm />
+      <ContactInfo />
+    </>
+  )
 }

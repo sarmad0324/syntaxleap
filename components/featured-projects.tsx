@@ -5,6 +5,24 @@ import Image from "next/image"
 
 const projects = [
   {
+    title: "HomeBites",
+    result:
+      "A modern food delivery platform connecting food lovers with passionate local chefs. Features real-time order tracking, group ordering, bill splitting, and community reviews for authentic home-cooked meals.",
+    impact: "25,000+ happy customers and 1,200+ active chefs with 4.9★ average rating.",
+    image: "/Screenshot 2025-12-04 at 4.46.00 PM.png",
+    link: "https://homebites1.netlify.app/",
+    widget: { label: "Happy Customers", value: "25K+" },
+  },
+  {
+    title: "AdOdyss",
+    result:
+      "A comprehensive marketplace growth management platform for Amazon & Walmart brands. Features PPC management, DSP advertising, listing optimization, brand protection, and profit recovery tools.",
+    impact: "2,000+ brands served with 8-figure revenue influenced and +38% ROAS improvement.",
+    image: "/Screenshot 2025-12-04 at 4.45.51 PM.png",
+    link: "https://adodyss.com/",
+    widget: { label: "Brands Served", value: "2K+" },
+  },
+  {
     title: "Truckwise",
     result:
       "A logistics and fleet management App designed to optimize truck routes, manage drivers, track shipments, and handle finances. Built for both vendors and customers.",
@@ -99,19 +117,19 @@ const widgetVariants = {
 
 export function FeaturedProjects() {
   return (
-    <section id="featured-projects" className="py-20 bg-light-gray">
+    <section id="featured-projects" className="py-16 sm:py-20 lg:py-24 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-6 text-navy">
-            Featured Projects
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6 text-white">
+            Featured <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             See how we've helped businesses transform with AI-driven solutions.
           </p>
         </motion.div>
@@ -120,7 +138,7 @@ export function FeaturedProjects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.025] hover:shadow-2xl transition-transform duration-300 border border-transparent hover:border-teal group relative"
+              className="bg-slate-800/50 border border-slate-700 rounded-xl shadow-xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300 group relative"
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
@@ -140,8 +158,7 @@ export function FeaturedProjects() {
                 <div className="p-8 flex flex-col h-full justify-center">
                   {/* Impact */}
                   <motion.span
-                    className="block mb-2 text-sm font-bold text-white bg-teal px-4 py-1 rounded-full w-max shadow-lg"
-                    style={{ backgroundColor: 'var(--teal)' }}
+                    className="block mb-2 text-sm font-bold text-white bg-blue-500 px-4 py-1 rounded-full w-max shadow-lg"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -154,13 +171,12 @@ export function FeaturedProjects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl font-bold font-plus-jakarta mb-4 text-navy hover:text-teal transition-colors block underline underline-offset-4 decoration-teal"
-                    style={{ textDecorationColor: 'var(--teal)' }}
+                    className="text-xl sm:text-2xl font-bold font-inter mb-4 text-white hover:text-blue-400 transition-colors block underline underline-offset-4 decoration-blue-400"
                   >
                     {project.title}
                   </a>
                   {/* Description */}
-                  <p className="text-lg text-gray-600 font-semibold mb-2">
+                  <p className="text-base sm:text-lg text-gray-300 font-semibold mb-2">
                     {project.result}
                   </p>
                   {/* Link Button */}
@@ -168,8 +184,7 @@ export function FeaturedProjects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-2 text-sm font-semibold text-white bg-teal px-5 py-2 rounded-full shadow hover:bg-teal transition-colors duration-300 w-max"
-                    style={{ backgroundColor: 'var(--teal)' }}
+                    className="inline-block mt-2 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg shadow-lg shadow-blue-500/50 hover:shadow-xl transition-all duration-300 w-max"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -180,14 +195,14 @@ export function FeaturedProjects() {
                   {/* Widget: Dynamic Stat */}
                   {project.widget && (
                     <motion.div
-                      className="mt-6 bg-teal/10 rounded-xl p-4 text-teal text-center text-base font-bold shadow-inner flex flex-col items-center"
+                      className="mt-6 bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-blue-400 text-center text-base font-bold flex flex-col items-center"
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
                       variants={widgetVariants}
                     >
-                      <span className="text-2xl" style={{ color: 'var(--teal)' }}>{project.widget.value}</span>
-                      <span className="text-sm font-medium text-teal" style={{ color: 'var(--teal)' }}>{project.widget.label}</span>
+                      <span className="text-2xl">{project.widget.value}</span>
+                      <span className="text-sm font-medium">{project.widget.label}</span>
                     </motion.div>
                   )}
                 </div>

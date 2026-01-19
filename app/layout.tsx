@@ -138,7 +138,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="msapplication-TileColor" content="#0f766e" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-slate-900 text-white antialiased min-h-screen">
+      <body className="bg-background text-text-body antialiased min-h-screen">
         <StructuredData />
         <Navigation />
         <main>{children}</main>

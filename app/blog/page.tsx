@@ -112,14 +112,14 @@ const categories = ["All", "AI Trends", "Mobile Development", "Remote Teams", "C
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-slate-900 pt-24 sm:pt-28">
+    <div className="min-h-screen bg-background pt-28 sm:pt-32">
       {/* Hero Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Blog & <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Insights</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text mb-6">
+            Blog & <span className="text-primary">Insights</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-text-light mb-8 leading-relaxed">
             Stay updated with the latest AI trends, case studies, industry insights, and best practices 
             in web and mobile development from our expert team.
           </p>
@@ -132,7 +132,7 @@ export default function BlogPage() {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 rounded-full bg-slate-800/50 text-gray-300 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-200 border border-slate-700 hover:border-blue-500"
+              className="px-4 py-2 rounded-full bg-white text-text-body font-semibold hover:bg-primary hover:text-white transition-colors duration-200 border border-border hover:border-primary"
             >
               {category}
             </button>
@@ -142,7 +142,7 @@ export default function BlogPage() {
 
       {/* Featured Post */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="bg-slate-800/50 border border-slate-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300">
+        <div className="bg-white border border-border rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:border-primary transition-all duration-300">
           <div className="md:flex">
             <div className="md:w-1/2 relative h-64 md:h-auto">
               <Image
@@ -152,19 +152,19 @@ export default function BlogPage() {
                 className="object-cover"
               />
             </div>
-            <div className="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center bg-slate-800/50">
+            <div className="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center bg-white">
               <div className="mb-4">
-                <span className="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs font-bold border border-blue-500/20">
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold border border-primary/20">
                   {blogPosts[0].category}
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-text mb-4">
                 {blogPosts[0].title}
               </h2>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-text-light mb-6 leading-relaxed">
                 {blogPosts[0].excerpt}
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
+              <div className="flex items-center gap-4 text-sm text-text-light mb-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
                   <span>{new Date(blogPosts[0].date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
@@ -175,7 +175,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <Link href={`/blog/${blogPosts[0].id}`}>
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white w-full sm:w-auto">
+                <Button className="bg-primary hover:bg-primary-dark text-white w-full sm:w-auto">
                   Read Article
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -191,7 +191,7 @@ export default function BlogPage() {
           {blogPosts.slice(1).map((post) => (
             <article
               key={post.id}
-              className="bg-slate-800/50 border border-slate-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300 group"
+              className="bg-white border border-border rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:border-primary transition-all duration-300 group"
             >
               {/* Post Image */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -202,15 +202,15 @@ export default function BlogPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                  <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
                     {post.category}
                   </span>
                 </div>
               </div>
 
               {/* Post Content */}
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-4 text-xs text-gray-400 mb-4">
+              <div className="p-6 sm:p-8 bg-white">
+                <div className="flex items-center gap-4 text-xs text-text-light mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-3 h-3" />
                     <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
@@ -221,10 +221,10 @@ export default function BlogPage() {
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-gray-400 mb-4 leading-relaxed line-clamp-3">
+                <p className="text-text-light mb-4 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
 
@@ -233,7 +233,7 @@ export default function BlogPage() {
                   {post.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="flex items-center gap-1 bg-slate-700/50 text-gray-300 text-xs px-2 py-1 rounded border border-slate-600"
+                      className="flex items-center gap-1 bg-background text-text-body text-xs px-2 py-1 rounded border border-border"
                     >
                       <Tag className="w-3 h-3" />
                       {tag}
@@ -242,7 +242,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* Read More */}
-                <Link href={`/blog/${post.id}`} className="inline-flex items-center text-blue-400 font-semibold hover:gap-2 transition-all">
+                <Link href={`/blog/${post.id}`} className="inline-flex items-center text-primary font-semibold hover:gap-2 transition-all">
                   Read More
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
@@ -253,21 +253,21 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="bg-gradient-to-r from-blue-500/10 to-green-500/10 border-t border-b border-slate-700 py-16 sm:py-20">
+      <section className="bg-primary/5 border-t border-b border-border py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-text">
             Stay Updated with Our Latest Insights
           </h2>
-          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto text-gray-400">
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto text-text-light">
             Subscribe to our newsletter and get the latest AI trends, case studies, and development tips delivered to your inbox.
           </p>
           <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="flex-1 px-4 py-3 rounded-lg bg-white border border-border text-text-body placeholder-text-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             />
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-8">
+            <Button size="lg" className="bg-primary hover:bg-primary-dark text-white font-bold px-8">
               Subscribe
             </Button>
           </div>

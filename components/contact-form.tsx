@@ -27,9 +27,9 @@ export function ContactForm() {
 
   const budgets = [
     "$500-$1,000",
-    "$1,000-$2,500", 
-    "$2,500-$5,000",
-    "$5,000+"
+    "$1,000-$5,000", 
+    "$5,000-$15,000",
+    "$15,000+"
   ]
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,7 +60,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="pt-24 sm:pt-28 pb-16 sm:pb-20 bg-slate-900">
+    <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,10 +68,10 @@ export function ContactForm() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6 text-white">
-            Get Your <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Free Consultation</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6 text-text">
+            Get Your <span className="text-primary">Free Consultation</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-text-light leading-relaxed max-w-2xl mx-auto">
             Ready to transform your business with AI? Tell us about your project and we'll get back to you within 24 hours with a tailored solution.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export function ContactForm() {
           >
             {/* Service Selection */}
             <div>
-              <label className="block text-base sm:text-lg font-bold text-white mb-4">
+              <label className="block text-base sm:text-lg font-bold text-text mb-4">
                 What service are you interested in?
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -106,8 +106,8 @@ export function ContactForm() {
                     onClick={() => handleChange("service", service)}
                     className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${
                       formData.service === service
-                        ? "border-blue-500 bg-blue-500 text-white"
-                        : "border-slate-700 text-gray-300 hover:border-blue-500 bg-slate-800/50"
+                        ? "border-primary bg-primary text-white"
+                        : "border-border text-text-body hover:border-primary bg-white"
                     }`}
                   >
                     {service}
@@ -119,7 +119,7 @@ export function ContactForm() {
             {/* Name and Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-base sm:text-lg font-bold text-white mb-2">
+                <label htmlFor="name" className="block text-base sm:text-lg font-bold text-text mb-2">
                   Name *
                 </label>
                 <input
@@ -128,12 +128,12 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   required
-                  className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light"
                   placeholder="Your full name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-base sm:text-lg font-bold text-white mb-2">
+                <label htmlFor="email" className="block text-base sm:text-lg font-bold text-text mb-2">
                   Email *
                 </label>
                 <input
@@ -142,7 +142,7 @@ export function ContactForm() {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   required
-                  className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light"
                   placeholder="your@email.com"
                 />
               </div>
@@ -150,7 +150,7 @@ export function ContactForm() {
 
             {/* Project Description */}
             <div>
-              <label htmlFor="project" className="block text-base sm:text-lg font-bold text-white mb-2">
+              <label htmlFor="project" className="block text-base sm:text-lg font-bold text-text mb-2">
                 Tell us about your project *
               </label>
               <textarea
@@ -159,14 +159,14 @@ export function ContactForm() {
                 onChange={(e) => handleChange("project", e.target.value)}
                 required
                 rows={5}
-                className="w-full px-4 py-3 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-800/50 text-white placeholder-gray-500 resize-none"
+                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light resize-none"
                 placeholder="Describe your project, goals, and any specific requirements..."
               />
             </div>
 
             {/* Budget */}
             <div>
-              <label className="block text-base sm:text-lg font-bold text-white mb-4">
+              <label className="block text-base sm:text-lg font-bold text-text mb-4">
                 Budget Range (Optional)
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -176,8 +176,8 @@ export function ContactForm() {
                     type="button"
                     onClick={() => handleChange("budget", budget)}
                     className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${formData.budget === budget
-                        ? "border-blue-500 bg-blue-500 text-white"
-                        : "border-slate-700 text-gray-300 hover:border-blue-500 bg-slate-800/50"
+                        ? "border-primary bg-primary text-white"
+                        : "border-border text-text-body hover:border-primary bg-white"
                     }`}
                   >
                     {budget}
@@ -204,20 +204,20 @@ export function ContactForm() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 sm:mt-16 bg-slate-800/50 rounded-xl p-6 sm:p-8 border border-slate-700"
+          className="mt-12 sm:mt-16 bg-white rounded-xl p-6 sm:p-8 border border-border shadow-md"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-2xl font-bold text-blue-400 mb-2">24/7</div>
-              <div className="text-sm text-gray-400">Support Available</div>
+              <div className="text-2xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-sm text-text-light">Support Available</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-green-400 mb-2">24hrs</div>
-              <div className="text-sm text-gray-400">Response Time</div>
+              <div className="text-2xl font-bold text-accent mb-2">24hrs</div>
+              <div className="text-sm text-text-light">Response Time</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-blue-400 mb-2">100%</div>
-              <div className="text-sm text-gray-400">Privacy Guaranteed</div>
+              <div className="text-2xl font-bold text-primary mb-2">100%</div>
+              <div className="text-sm text-text-light">Privacy Guaranteed</div>
             </div>
           </div>
         </motion.div>

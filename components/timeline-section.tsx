@@ -11,17 +11,17 @@ export function TimelineSection() {
   ]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-slate-900 relative">
+    <section className="py-16 sm:py-20 lg:py-24 bg-background relative">
       {/* Section Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 rounded-full opacity-30" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-20 text-white text-center"
+          className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-20 text-text text-center"
         >
-          Our <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Journey</span>
+          Our <span className="text-primary">Journey</span>
         </motion.h2>
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Timeline Line */}

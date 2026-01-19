@@ -52,11 +52,11 @@ const features = [
 
 export function ShowcaseSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-slate-900 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-background relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -68,10 +68,10 @@ export function ShowcaseSection() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6 text-white">
-            Why Choose <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">SyntaxLeap</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6 text-text">
+            Why Choose <span className="text-primary">SyntaxLeap</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
             We combine cutting-edge AI technology with proven development practices to deliver exceptional results
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export function ShowcaseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white border border-border hover:border-primary transition-all duration-300 shadow-md hover:shadow-lg"
             >
               {/* Image Background */}
               <div className="relative h-64 overflow-hidden">
@@ -95,8 +95,8 @@ export function ShowcaseSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-80 mix-blend-overlay`}></div>
-                <div className="absolute inset-0 bg-slate-900/60 group-hover:bg-slate-900/40 transition-colors duration-300"></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-60 mix-blend-overlay`}></div>
+                <div className="absolute inset-0 bg-white/40 group-hover:bg-white/20 transition-colors duration-300"></div>
                 
                 {/* Icon */}
                 <div className="absolute top-6 left-6">
@@ -107,23 +107,23 @@ export function ShowcaseSection() {
 
                 {/* Stats Badge */}
                 <div className="absolute top-6 right-6">
-                  <div className="bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-700">
-                    <span className="text-white text-sm font-bold">{item.stats}</span>
+                  <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full border border-border shadow-md">
+                    <span className="text-text text-sm font-bold">{item.stats}</span>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold font-inter mb-3 text-white">
+              <div className="p-6 sm:p-8 bg-white">
+                <h3 className="text-xl sm:text-2xl font-bold font-inter mb-3 text-text">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-text-light leading-relaxed mb-6">
                   {item.description}
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold group-hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold group-hover:gap-3 transition-all duration-300"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4" />
@@ -148,15 +148,15 @@ export function ShowcaseSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 border border-slate-700 p-6 sm:p-8 rounded-xl hover:border-blue-500/50 transition-all duration-300 group"
+              className="bg-white border border-border p-6 sm:p-8 rounded-xl hover:border-primary transition-all duration-300 group shadow-md hover:shadow-lg"
             >
-              <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors duration-300">
-                <feature.icon className="w-7 h-7 text-blue-400" />
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                <feature.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold font-inter mb-3 text-white">
+              <h3 className="text-xl font-bold font-inter mb-3 text-text">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-text-light leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -171,16 +171,16 @@ export function ShowcaseSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-2xl p-8 sm:p-12">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-inter mb-4 text-white">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 sm:p-12">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-inter mb-4 text-text">
               Ready to Transform Your Business?
             </h3>
-            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-text-light mb-8 max-w-2xl mx-auto">
               Join hundreds of companies that trust SyntaxLeap for their AI development needs
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg shadow-blue-500/50 hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:scale-105"
             >
               Get Started Today
               <ArrowRight className="w-5 h-5" />

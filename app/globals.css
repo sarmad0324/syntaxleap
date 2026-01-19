@@ -5,20 +5,22 @@
 :root {
   --font-inter: "Inter", sans-serif;
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
-  --primary: #2563EB;
-  --primary-dark: #1E40AF;
-  --accent: #3DBF7A;
-  --accent-dark: #2FA866;
-  --background: #FAFAFA;
+  --primary: #16A3AD;
+  --primary-dark: #128A93;
+  --accent: #31D0C9;
+  --accent-dark: #28B5AF;
+  --background: #F7FAFB;
   --background-light: #FFFFFF;
-  --text: #1F2937;
-  --text-light: #6B7280;
+  --text: #0F153C;
+  --text-body: #223042;
+  --text-light: #5B7280;
   --text-lighter: #9CA3AF;
   --white: #FFFFFF;
-  --navy: #1B2951;
-  --teal: #12A5AD;
-  --charcoal: #2D2D2D;
-  --light-gray: #F8F9FA;
+  --navy: #0F153C;
+  --teal: #16A3AD;
+  --charcoal: #223042;
+  --light-gray: #F7FAFB;
+  --border: #E2EEF0;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -39,7 +41,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   background: var(--background);
-  color: var(--text);
+  color: var(--text-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

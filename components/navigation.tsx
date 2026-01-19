@@ -70,11 +70,11 @@ export function Navigation() {
 
   return (
   <motion.header
-    className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-800"
+    className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-border shadow-sm"
     style={{overflow: 'visible'}}
   >
     <nav className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">
-      <div className="flex items-center justify-between h-20 transition-all duration-300">
+      <div className="flex items-center justify-between h-24 sm:h-28 transition-all duration-300">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
@@ -82,7 +82,14 @@ export function Navigation() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="relative flex items-center"
             >
-              <Image src="/logo.svg" alt="SyntaxLeap - AI-Powered Web & Mobile Development" width={180} height={60} priority className=" brightness-0 invert" />
+              <Image
+                src="/Logo.svg"
+                alt="SyntaxLeap - AI-Powered Web & Mobile Development"
+                width={180}
+                height={62}
+                priority
+               
+              />
             </motion.div>
           </Link>
 
@@ -97,7 +104,7 @@ export function Navigation() {
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    <button className="flex items-center text-gray-300 font-medium text-sm hover:text-white transition-colors duration-200 tracking-wide px-3 py-2">
+                    <button className="flex items-center text-text-body font-medium text-sm hover:text-primary transition-colors duration-200 tracking-wide px-3 py-2">
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
@@ -118,22 +125,22 @@ export function Navigation() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}
-                            className="fixed left-0 top-20 sm:top-24 w-full z-[100]"
+                            className="fixed left-0 top-24 sm:top-28 w-full z-[100]"
                           >
-                            <div className="relative w-full bg-slate-900 shadow-2xl border-t border-slate-700 py-12 px-4 sm:px-8 flex justify-center">
+                            <div className="relative w-full bg-white shadow-2xl border-t border-border py-12 px-4 sm:px-8 flex justify-center">
                               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 w-full max-w-7xl">
                                 {serviceItems.map((service, idx) => (
                                   <Link
                                     key={service.name}
                                     href={service.href}
                                     onClick={() => setIsServicesOpen(false)}
-                                    className="group bg-slate-800/80 rounded-xl shadow-lg border border-slate-700 p-6 sm:p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300"
+                                    className="group bg-background border border-border rounded-xl shadow-md p-6 sm:p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl hover:border-primary transition-all duration-300"
                                   >
-                                    <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-xl bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors duration-300">
-                                      <service.icon className="w-10 h-10 text-blue-400" />
+                                    <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                                      <service.icon className="w-10 h-10 text-primary" />
                                     </div>
-                                    <div className="font-semibold text-base sm:text-lg text-white mb-2">{service.name}</div>
-                                    <div className="text-gray-400 text-sm">{service.description}</div>
+                                    <div className="font-semibold text-base sm:text-lg text-text mb-2">{service.name}</div>
+                                    <div className="text-text-light text-sm">{service.description}</div>
                                   </Link>
                                 ))}
                               </div>
@@ -149,7 +156,7 @@ export function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 font-medium text-sm hover:text-white transition-colors duration-200 tracking-wide px-3 py-2"
+                  className="text-text-body font-medium text-sm hover:text-primary transition-colors duration-200 tracking-wide px-3 py-2"
                 >
                   {item.name}
                 </Link>
@@ -157,7 +164,7 @@ export function Navigation() {
             })}
             {/* CTA Button */}
             <Link href="/contact" className="ml-4 sm:ml-8">
-              <Button size="lg" variant="default" className="px-6 sm:px-8 py-2.5 text-sm font-semibold bg-blue-500 hover:bg-blue-600 text-white border-none rounded-lg shadow-lg shadow-blue-500/50">
+              <Button size="lg" variant="default" className="px-6 sm:px-8 py-2.5 text-sm font-semibold bg-primary hover:bg-primary-dark text-white border-none rounded-lg shadow-lg shadow-primary/30">
                 Get Consultation
               </Button>
             </Link>
@@ -165,7 +172,7 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-md text-gray-300 hover:text-white transition-colors duration-200"
+            className="lg:hidden p-2 rounded-md text-text-body hover:text-primary transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -183,24 +190,24 @@ export function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-4 pt-4 pb-4 space-y-2 bg-slate-800 border-t border-slate-700">
+              <div className="px-4 pt-4 pb-4 space-y-2 bg-white border-t border-border">
                 {navItems.filter(item => item.name !== "Services").map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block py-3 text-gray-300 font-medium hover:text-white transition-colors duration-200 border-b border-slate-700"
+                    className="block py-3 text-text-body font-medium hover:text-primary transition-colors duration-200 border-b border-border"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
                 <div className="pt-2 pb-2">
-                  <div className="text-white font-semibold text-sm mb-2 px-2">Services</div>
+                  <div className="text-text font-semibold text-sm mb-2 px-2">Services</div>
                   {serviceItems.map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
-                      className="block py-2 pl-6 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                      className="block py-2 pl-6 text-text-light hover:text-primary transition-colors duration-200 text-sm"
                       onClick={() => setIsOpen(false)}
                     >
                       {service.name}
@@ -208,7 +215,7 @@ export function Navigation() {
                   ))}
                 </div>
                 <div className="pt-4">
-                  <Link href="/contact" className="bg-blue-500 hover:bg-blue-600 text-white w-full text-center block py-3 rounded-lg font-semibold transition-colors" onClick={() => setIsOpen(false)}>
+                  <Link href="/contact" className="bg-primary hover:bg-primary-dark text-white w-full text-center block py-3 rounded-lg font-semibold transition-colors" onClick={() => setIsOpen(false)}>
                     Get Free Consultation
                   </Link>
                 </div>

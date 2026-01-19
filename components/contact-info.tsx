@@ -7,7 +7,7 @@ import { Calendar, Mail, Linkedin, Clock, CheckCircle } from "lucide-react"
 
 export function ContactInfo() {
   return (
-    <section className="py-16 sm:py-20 bg-slate-900">
+    <section className="py-16 sm:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -17,13 +17,13 @@ export function ContactInfo() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
           {/* Scheduling Widget */}
-          <Card className="bg-slate-800/50 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg">
+          <Card className="bg-white border border-border p-6 sm:p-8 rounded-2xl shadow-md">
             <div className="flex items-center space-x-3 mb-6">
-              <Calendar className="w-6 h-6 text-blue-400" />
-              <h3 className="text-xl sm:text-2xl font-bold font-inter text-white">Book a Free AI Strategy Call</h3>
+              <Calendar className="w-6 h-6 text-primary" />
+              <h3 className="text-xl sm:text-2xl font-bold font-inter text-text">Book a Free AI Strategy Call</h3>
             </div>
 
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-text-light mb-6 leading-relaxed">
               Schedule a 30-minute consultation to discuss your project requirements, explore AI opportunities, and get a
               customized roadmap for your digital transformation.
             </p>
@@ -34,7 +34,7 @@ export function ContactInfo() {
               <p className="text-gray-400 mb-4 text-sm">Calendly scheduling widget would be embedded here</p>
               <Button
                 className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-bold"
-                onClick={() => window.open("https://calendly.com/syntaxleap", "_blank")}
+                onClick={() => window.open("https://calendly.com/sarmadirfan78/30min", "_blank")}
               >
                 Schedule Call
               </Button>
@@ -118,27 +118,27 @@ export function ContactInfo() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <Card className="bg-slate-800/50 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-lg">
-            <h3 className="text-xl sm:text-2xl font-bold font-inter text-white mb-6">Frequently Asked Questions</h3>
+          <Card className="bg-white border border-border p-6 sm:p-8 rounded-2xl shadow-md">
+            <h3 className="text-xl sm:text-2xl font-bold font-inter text-text mb-6">Frequently Asked Questions</h3>
 
             <div className="space-y-4">
               <div>
-                <h4 className="text-white font-bold mb-2">How long does a typical project take?</h4>
-                <p className="text-gray-400 text-sm">
+                <h4 className="text-text font-bold mb-2">How long does a typical project take?</h4>
+                <p className="text-text-light text-sm">
                   Most projects range from 2-6 months depending on complexity and scope.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-white font-bold mb-2">Do you work with startups?</h4>
-                <p className="text-gray-400 text-sm">
+                <h4 className="text-text font-bold mb-2">Do you work with startups?</h4>
+                <p className="text-text-light text-sm">
                   Yes! We love working with startups and offer flexible engagement models.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-white font-bold mb-2">What's included in the free consultation?</h4>
-                <p className="text-gray-400 text-sm">
+                <h4 className="text-text font-bold mb-2">What's included in the free consultation?</h4>
+                <p className="text-text-light text-sm">
                   AI opportunity assessment, project roadmap, and technology recommendations.
                 </p>
               </div>

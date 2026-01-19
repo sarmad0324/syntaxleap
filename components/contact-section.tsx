@@ -135,7 +135,7 @@ export function ContactSection() {
                 <p className="text-gray-400 mb-4">Calendly scheduling widget would be embedded here</p>
                 <Button
                   className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-semibold"
-                  onClick={() => window.open("https://calendly.com/syntaxleap", "_blank")}
+                  onClick={() => window.open("https://calendly.com/sarmadirfan78/30min", "_blank")}
                 >
                   Schedule Call
                 </Button>

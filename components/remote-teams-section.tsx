@@ -31,7 +31,7 @@ export function RemoteTeamsSection() {
   ]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-slate-900">
+    <section className="py-16 sm:py-20 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           {/* Content */}
@@ -41,10 +41,10 @@ export function RemoteTeamsSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Scale with <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Remote AI Teams</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter text-text mb-6">
+              Scale with <span className="text-primary">Remote AI Teams</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-text-light mb-8 leading-relaxed">
               Build your AI capabilities faster with dedicated remote teams that work as an extension 
               of your in-house staff. Get access to specialized talent, reduce costs, and accelerate 
               your digital transformation.
@@ -60,14 +60,14 @@ export function RemoteTeamsSection() {
                   viewport={{ once: true }}
                   className="flex items-start gap-4"
                 >
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <advantage.icon className="w-6 h-6 text-blue-400" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <advantage.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold font-inter text-text mb-2">
                       {advantage.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-text-light leading-relaxed">
                       {advantage.description}
                     </p>
                   </div>
@@ -76,7 +76,10 @@ export function RemoteTeamsSection() {
             </div>
 
             <Link href="/services/remote-teams">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-6 shadow-lg shadow-blue-500/50">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-6 shadow-lg shadow-primary/30"
+              >
                 Learn About Remote Teams
               </Button>
             </Link>
@@ -90,19 +93,19 @@ export function RemoteTeamsSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative h-96 sm:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+            <div className="relative h-96 sm:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-border">
               <Image
                 src="/meeting.jpg"
                 alt="Remote AI team collaboration"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-blue-500/10"></div>
+              <div className="absolute inset-0 bg-primary/10"></div>
             </div>
             {/* Stats overlay */}
-            <div className="absolute -bottom-6 -right-6 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl p-6 max-w-xs">
-              <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
-              <div className="text-gray-400">Projects Delivered</div>
+            <div className="absolute -bottom-6 -right-6 bg-white border border-border rounded-xl shadow-2xl p-6 max-w-xs">
+              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-text-light">Projects Delivered</div>
             </div>
           </motion.div>
         </div>

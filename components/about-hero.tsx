@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function AboutHero() {
   return (
-    <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-background">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none select-none opacity-20">
         <motion.div 
@@ -56,7 +56,7 @@ export function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta mb-6 text-white leading-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta mb-6  leading-tight"
         >
           About <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">SyntaxLeap</span>
         </motion.h1>

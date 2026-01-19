@@ -234,14 +234,14 @@ const caseStudies = [
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-slate-900 pt-24 sm:pt-28">
+    <div className="min-h-screen bg-background pt-24 sm:pt-28">
       {/* Hero Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Portfolio</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text mb-6">
+            Our <span className="text-primary">Portfolio</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-text-light mb-8 leading-relaxed">
             Explore our successful AI-powered projects. See how we've helped businesses and startups 
             transform with intelligent solutions, reduced delivery times, and achieved remarkable results.
           </p>
@@ -254,7 +254,7 @@ export default function PortfolioPage() {
           {caseStudies.map((project) => (
             <div
               key={project.id}
-              className="bg-slate-800/50 border border-slate-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300 group"
+              className="bg-white border border-border rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:border-primary transition-all duration-300 group"
             >
               {/* Project Image */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -265,59 +265,59 @@ export default function PortfolioPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                  <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
                     {project.category}
                   </span>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              <div className="p-6 sm:p-8 bg-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-text mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-text-light text-sm mb-4">
                   {project.client}
                 </p>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-text-light mb-6 leading-relaxed">
                   {project.summary}
                 </p>
 
                 {/* Key Metrics */}
-                <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-slate-700">
+                <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
                   {project.metrics.deliveryTime && (
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-blue-400" />
+                      <Clock className="w-4 h-4 text-primary" />
                       <div>
-                        <div className="text-xs text-gray-400">Delivery</div>
-                        <div className="text-sm font-bold text-white">{project.metrics.deliveryTime}</div>
+                        <div className="text-xs text-text-light">Delivery</div>
+                        <div className="text-sm font-bold text-text">{project.metrics.deliveryTime}</div>
                       </div>
                     </div>
                   )}
                   {project.metrics.users && (
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-green-400" />
+                      <Users className="w-4 h-4 text-accent" />
                       <div>
-                        <div className="text-xs text-gray-400">Users</div>
-                        <div className="text-sm font-bold text-white">{project.metrics.users}</div>
+                        <div className="text-xs text-text-light">Users</div>
+                        <div className="text-sm font-bold text-text">{project.metrics.users}</div>
                       </div>
                     </div>
                   )}
                   {project.metrics.successRate && (
                     <div className="flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4 text-blue-400" />
+                      <TrendingUp className="w-4 h-4 text-primary" />
                       <div>
-                        <div className="text-xs text-gray-400">Success</div>
-                        <div className="text-sm font-bold text-white">{project.metrics.successRate}</div>
+                        <div className="text-xs text-text-light">Success</div>
+                        <div className="text-sm font-bold text-text">{project.metrics.successRate}</div>
                       </div>
                     </div>
                   )}
                   {(project.metrics.rating || project.metrics.revenue || project.metrics.revenueIncrease || project.metrics.engagement || project.metrics.efficiency || project.metrics.retention) && (
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-400" />
+                      <CheckCircle2 className="w-4 h-4 text-accent" />
                       <div>
-                        <div className="text-xs text-gray-400">Results</div>
-                        <div className="text-sm font-bold text-white">
+                        <div className="text-xs text-text-light">Results</div>
+                        <div className="text-sm font-bold text-text">
                           {project.metrics.rating || project.metrics.revenue || project.metrics.revenueIncrease || project.metrics.engagement || project.metrics.efficiency || project.metrics.retention || "High"}
                         </div>
                       </div>
@@ -327,12 +327,12 @@ export default function PortfolioPage() {
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <div className="text-xs text-gray-400 mb-2">Technologies:</div>
+                  <div className="text-xs text-text-light mb-2">Technologies:</div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-slate-700/50 text-gray-300 text-xs px-2 py-1 rounded border border-slate-600"
+                        className="bg-background text-text-body text-xs px-2 py-1 rounded border border-border"
                       >
                         {tech}
                       </span>
@@ -342,11 +342,11 @@ export default function PortfolioPage() {
 
                 {/* Key Results */}
                 <div className="mb-6">
-                  <div className="text-xs text-gray-400 mb-2 font-semibold">Key Results:</div>
+                  <div className="text-xs text-text-light mb-2 font-semibold">Key Results:</div>
                   <ul className="space-y-1">
                     {project.results.slice(0, 2).map((result, idx) => (
-                      <li key={idx} className="text-sm text-gray-400 flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                      <li key={idx} className="text-sm text-text-light flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                         <span>{result}</span>
                       </li>
                     ))}
@@ -361,14 +361,14 @@ export default function PortfolioPage() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                    <Button className="w-full bg-primary hover:bg-primary-dark text-white">
                       Visit Website
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </a>
                 ) : (
                   <Link href="/contact" className="block">
-                    <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                    <Button className="w-full bg-primary hover:bg-primary-dark text-white">
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -381,22 +381,22 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-500/10 to-green-500/10 border-t border-b border-slate-700 py-16 sm:py-20">
+      <section className="bg-primary/5 border-t border-b border-border py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-text">
             Ready to Start Your Project?
           </h2>
-          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto text-gray-400">
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto text-text-light">
             Let's discuss how we can transform your business with AI-powered solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-8 py-6">
+              <Button size="lg" className="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-6">
                 Get Free Consultation
               </Button>
             </Link>
             <Link href="/services">
-              <Button size="lg" variant="outline" className="border-slate-700 text-white hover:bg-slate-800/50 hover:border-blue-500 font-bold px-8 py-6">
+              <Button size="lg" variant="outline" className="border-border text-text-body hover:bg-background hover:border-primary font-bold px-8 py-6">
                 View Our Services
               </Button>
             </Link>

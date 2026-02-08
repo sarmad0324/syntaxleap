@@ -16,9 +16,9 @@ export function MissionSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl lg:text-5xl font-bold font-plus-jakarta mb-8 text-text"
+            className="text-4xl lg:text-5xl font-bold font-inter mb-8 text-text"
           >
-            Our <span className="text-primary">Mission</span>
+            What We <span className="text-primary">Stand For</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -27,11 +27,9 @@ export function MissionSection() {
             transition={{ delay: 0.2 }}
             className="text-xl lg:text-2xl text-text-light leading-relaxed font-normal"
           >
-            We democratize artificial intelligence for businesses of all sizes. Our mission is to make 
-            cutting-edge AI technology accessible, practical, and profitable for startups and SMEs. 
-            By bridging the gap between complex AI research and real-world business applications, 
-            we empower companies to harness the transformative power of machine learning to drive 
-            growth, efficiency, and innovation.
+            We believe in building products the right way: scalable architecture, clean code, and long-term thinking. 
+            As a small, senior-driven team, we work hands-on with founders and product teams to deliver production-ready 
+            solutions. Quality over quantity. Partnerships over projects. We're here for the long run.
           </motion.p>
         </motion.div>
       </div>

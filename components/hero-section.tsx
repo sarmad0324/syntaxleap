@@ -35,7 +35,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full mb-8 text-sm font-medium"
             >
               <Sparkles className="w-4 h-4" />
-              <span>AI-Powered Development Agency</span>
+              <span>From MVP to Scale</span>
             </motion.div>
             
             {/* Main Headline */}
@@ -45,12 +45,11 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              We Build{" "}
-              <span className="text-primary">
-                AI-Powered
-              </span>
+              Web, Mobile & AI{" "}
               <br />
-              Digital Solutions
+              <span className="text-primary">
+                Development
+              </span>
             </motion.h1>
             
             {/* Subheadline */}
@@ -60,7 +59,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              We don't just build software—we solve your biggest business challenges. Whether you're expanding into new markets, enhancing customer experiences, or unlocking the power of data, our tailored solutions empower you to achieve more.
+              We build scalable, production-ready web and mobile products for startups and growing businesses using React Native, Next.js, Node.js, and AI-powered backends.
             </motion.p>
             
             {/* CTA Buttons */}
@@ -74,14 +73,14 @@ export function HeroSection() {
                 href="/contact"
                 className="group bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
               >
-                Get Free Consultation
+                Book an Intro Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                href="/portfolio"
+                href="#process"
                 className="group bg-transparent border-2 border-border hover:border-primary text-text-body hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 hover:scale-105"
               >
-                View Our Work
+                See How We Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -94,17 +93,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 1 }}
             >
               <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent border-2 border-white"></div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <span key={i} className="text-yellow-400 text-lg">★</span>
-                  ))}
-                </div>
-                <span className="text-text-light text-sm">TRUSTED BY 500+ CLIENTS</span>
+                <span className="text-text-light text-sm font-medium">Trusted by Early-Stage Founders & Product Teams</span>
               </div>
             </motion.div>
 
@@ -116,9 +105,9 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               {[
-                { number: "50+", label: "AI Projects" },
-                { number: "99%", label: "Success Rate" },
-                { number: "24/7", label: "Support" }
+                { number: "2-4", label: "Week MVPs" },
+                { number: "100%", label: "Production Ready" },
+                { number: "Ongoing", label: "Support" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl sm:text-4xl font-bold text-text mb-2">{stat.number}</div>

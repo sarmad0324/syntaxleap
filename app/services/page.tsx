@@ -3,31 +3,31 @@ import { ServicesHero } from "@/components/services-hero"
 import { ServiceDetails } from "@/components/service-details"
 
 export const metadata: Metadata = {
-  title: "AI Development Services | SyntaxLeap",
+  title: "Our Services | Dedicated Development, MVP Build & AI Automation | SyntaxLeap",
   description:
-    "Comprehensive AI development services including web applications, mobile apps, UI/UX design, WordPress integrations, and remote AI teams. Transform your business with SyntaxLeap's AI expertise.",
+    "Dedicated product development, MVP builds, and AI automation for startups. From $2k/month ongoing development to $3-6k fixed-scope MVPs. React, Next.js, React Native.",
   keywords: [
-    "AI development services",
-    "machine learning services",
-    "artificial intelligence consulting",
-    "AI web development",
-    "intelligent mobile apps",
-    "AI UI/UX design",
-    "WordPress AI integration",
-    "remote AI teams",
-    "custom AI solutions",
+    "dedicated product development",
+    "MVP development services",
+    "startup development agency",
+    "React development services",
+    "Next.js development",
+    "React Native apps",
+    "AI automation tools",
+    "internal tools development",
+    "product development agency",
   ],
   openGraph: {
-    title: "AI Development Services | SyntaxLeap",
+    title: "Our Services | Dedicated Development, MVP Build & AI Automation",
     description:
-      "Comprehensive AI development services to transform your business with artificial intelligence and machine learning solutions.",
+      "Dedicated teams, MVP builds, and AI automation for startups. React, Next.js, React Native development services.",
     url: "https://www.syntaxleap.info/services",
     images: [
       {
         url: "https://www.syntaxleap.info/og-services.jpg",
         width: 1200,
         height: 630,
-        alt: "SyntaxLeap AI Development Services",
+        alt: "SyntaxLeap Development Services",
       },
     ],
   },

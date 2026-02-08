@@ -1,31 +1,31 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, Zap, TrendingUp, Target } from "lucide-react"
+import { Code2, Rocket, Shield, Users } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function WhyAIAutomation() {
   const benefits = [
     {
-      icon: Bot,
-      title: "Intelligent Automation",
-      description: "Reduce manual work by up to 70% with AI-powered automation that learns and adapts to your business processes.",
+      icon: Code2,
+      title: "Production-Ready Code",
+      description: "Clean architecture, scalable infrastructure, and best practices from day one. No shortcuts, no technical debt.",
     },
     {
-      icon: Zap,
-      title: "Faster Time to Market",
-      description: "Accelerate development cycles and launch products 40% faster with AI-assisted development tools and workflows.",
+      icon: Rocket,
+      title: "Fast Delivery",
+      description: "2-4 week MVP launches. Sprint-based development for ongoing projects. We ship quality code quickly.",
     },
     {
-      icon: TrendingUp,
-      title: "Data-Driven Decisions",
-      description: "Make smarter business decisions with AI analytics that provide real-time insights and predictive capabilities.",
+      icon: Shield,
+      title: "Long-Term Partnership",
+      description: "We're not just a dev shop. We build lasting relationships with founders and product teams.",
     },
     {
-      icon: Target,
-      title: "Competitive Advantage",
-      description: "Stay ahead of competitors with cutting-edge AI features that enhance user experience and operational efficiency.",
+      icon: Users,
+      title: "Senior Team",
+      description: "Small, experienced team. No juniors, no outsourcing. Just senior developers who care about your product.",
     },
   ]
 
@@ -40,11 +40,11 @@ export function WhyAIAutomation() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter text-text mb-6">
-            Why AI & <span className="text-primary">Automation</span>?
+            Why Choose <span className="text-primary">SyntaxLeap</span>?
           </h2>
           <p className="text-lg sm:text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
-            Transform your business operations with intelligent automation that scales with your growth 
-            and adapts to your unique needs.
+            We're not the biggest agency, but we're focused on what matters: quality code, reliable delivery, 
+            and building products that last.
           </p>
         </motion.div>
 
@@ -78,12 +78,12 @@ export function WhyAIAutomation() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Link href="/services">
+          <Link href="/contact">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-6 shadow-lg shadow-primary/30"
             >
-              Explore Our AI Services
+              Start Your Project
             </Button>
           </Link>
         </motion.div>

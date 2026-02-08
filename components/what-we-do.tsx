@@ -1,24 +1,31 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Globe, Smartphone, Users } from "lucide-react"
+import { Zap, Rocket, Bot } from "lucide-react"
+import Link from "next/link"
 
 export function WhatWeDo() {
   const services = [
     {
-      icon: Globe,
-      title: "AI Web Applications",
-      description: "Intelligent web platforms powered by machine learning algorithms that adapt to user behavior and drive business growth."
+      icon: Zap,
+      title: "Dedicated Product Development",
+      description: "Your extended development team. Ongoing sprint-based development for startups who need consistent, reliable capacity.",
+      pricing: "From $2k/month",
+      link: "/services#dedicated-development"
     },
     {
-      icon: Smartphone,
-      title: "Mobile Solutions",
-      description: "Smart mobile apps with AI features that provide personalized experiences and predictive capabilities for your users."
+      icon: Rocket,
+      title: "MVP Build / Product Rebuild",
+      description: "Launch in 2-4 weeks with a scalable foundation. Production-ready code from day one, built to grow with you.",
+      pricing: "$3k-$6k fixed scope",
+      link: "/services#mvp-build"
     },
     {
-      icon: Users,
-      title: "Remote AI Teams",
-      description: "Dedicated AI specialists who integrate seamlessly with your team to accelerate development and deliver cutting-edge solutions."
+      icon: Bot,
+      title: "AI Automation & Internal Tools",
+      description: "Stop wasting time on manual workflows. We build AI-powered tools and automations that boost team productivity.",
+      pricing: "From $1k",
+      link: "/services#ai-automation"
     }
   ]
 
@@ -33,10 +40,10 @@ export function WhatWeDo() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6 text-text">
-            Our <span className="text-primary">Services</span>
+            What We <span className="text-primary">Offer</span>
           </h2>
           <p className="text-lg sm:text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
-            We create intelligent solutions that transform how businesses operate and engage with their customers.
+            Three focused services designed for startups and growing businesses who need production-ready development.
           </p>
         </motion.div>
 
@@ -48,20 +55,44 @@ export function WhatWeDo() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white border border-border p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg hover:border-primary transition-all duration-300 group"
+              className="bg-white border border-border p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl hover:border-primary transition-all duration-300 group flex flex-col"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                <service.icon className="w-8 h-8 text-primary" />
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                <service.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold font-inter mb-4 text-text">
+              <h3 className="text-xl sm:text-2xl font-bold font-inter mb-3 text-text">
                 {service.title}
               </h3>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-light leading-relaxed mb-4 flex-grow">
                 {service.description}
               </p>
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <span className="text-sm font-bold text-primary">{service.pricing}</span>
+                <Link 
+                  href={service.link}
+                  className="text-sm font-semibold text-text hover:text-primary transition-colors"
+                >
+                  Learn More →
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Link 
+            href="/services"
+            className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            View All Services
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

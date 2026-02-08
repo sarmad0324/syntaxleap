@@ -1,41 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState, useRef } from "react"
+import { useState } from "react"
+import { Calendar, MessageCircle, Mail } from "lucide-react"
 
 export function ContactForm() {
-  const form = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
-    service: "",
     name: "",
     email: "",
-    project: "",
-    budget: ""
+    company: "",
+    service: "",
+    message: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState("")
+  const [submitMessage, setSubmitMessage] = useState("")
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const services = [
-    "Site from Scratch",
-    "AI Web App", 
-    "Mobile Application",
-    "Custom Web App",
-    "CRM Software",
-    "AI Solution",
-    "Remote Team"
-  ]
-
-  const budgets = [
-    "$500-$1,000",
-    "$1,000-$5,000", 
-    "$5,000-$15,000",
-    "$15,000+"
+    "Dedicated Product Development",
+    "MVP Build / Product Rebuild", 
+    "AI Automation & Internal Tools",
+    "General Query / Other"
   ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setMessage("")
+    setSubmitMessage("")
+    setIsSuccess(false)
+    
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -43,15 +36,20 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       })
       const data = await res.json()
+      
       if (res.ok) {
-        setMessage("Thank you! We'll get back to you within 24 hours.")
-        setFormData({ service: "", name: "", email: "", project: "", budget: "" })
+        setIsSuccess(true)
+        setSubmitMessage("Thank you! We've received your message and will get back to you within 24 hours.")
+        setFormData({ name: "", email: "", company: "", service: "", message: "" })
       } else {
-        setMessage(data.error || "Something went wrong. Please try again later.")
+        setIsSuccess(false)
+        setSubmitMessage(data.error || "Something went wrong. Please try again or contact us directly.")
       }
     } catch (error) {
-      setMessage("Something went wrong. Please try again later.")
+      setIsSuccess(false)
+      setSubmitMessage("Something went wrong. Please try again or contact us directly.")
     }
+    
     setIsSubmitting(false)
   }
 
@@ -61,7 +59,7 @@ export function ContactForm() {
 
   return (
     <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,57 +67,92 @@ export function ContactForm() {
           className="text-center mb-12 sm:mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6 text-text">
-            Get Your <span className="text-primary">Free Consultation</span>
+            Let's Build Something <span className="text-primary">Great</span>
           </h1>
           <p className="text-lg sm:text-xl text-text-light leading-relaxed max-w-2xl mx-auto">
-            Ready to transform your business with AI? Tell us about your project and we'll get back to you within 24 hours with a tailored solution.
+            Ready to start your project? Book a call or send us a message, and we'll get back to you within 24 hours.
           </p>
         </motion.div>
 
-        {message ? (
+        {/* Calendly CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-12 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/20 rounded-2xl p-8 text-center"
+        >
+          <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-text mb-3">Book a 30-Min Intro Call</h2>
+          <p className="text-text-light mb-6">
+            The fastest way to get started. Let's discuss your project and see how we can help.
+          </p>
+          <a
+            href="https://calendly.com/sarmadirfan78/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            Schedule a Call
+          </a>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 mb-12">
+          <div className="flex-1 h-px bg-border"></div>
+          <span className="text-text-light font-medium">OR</span>
+          <div className="flex-1 h-px bg-border"></div>
+        </div>
+
+        {/* Success/Error Message */}
+        {submitMessage && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-green-500/10 text-green-400 p-6 sm:p-8 rounded-xl text-center max-w-md mx-auto border border-green-500/20"
+            className={`mb-8 p-6 rounded-xl text-center ${
+              isSuccess 
+                ? "bg-green-500/10 text-green-600 border border-green-500/20" 
+                : "bg-red-500/10 text-red-600 border border-red-500/20"
+            }`}
           >
-            <h3 className="text-xl font-bold mb-4">Message Sent!</h3>
-            <p>{message}</p>
+            <p className="font-semibold">{submitMessage}</p>
           </motion.div>
-        ) : (
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
-          >
+        )}
+
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 border border-border"
+        >
+          <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Service Selection */}
             <div>
-              <label className="block text-base sm:text-lg font-bold text-text mb-4">
-                What service are you interested in?
+              <label htmlFor="service" className="block text-sm font-bold text-text mb-2 uppercase tracking-wider">
+                What service are you interested in? *
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <select
+                id="service"
+                value={formData.service}
+                onChange={(e) => handleChange("service", e.target.value)}
+                required
+                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body"
+              >
+                <option value="">Select a service</option>
                 {services.map((service) => (
-                  <button
-                    key={service}
-                    type="button"
-                    onClick={() => handleChange("service", service)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${
-                      formData.service === service
-                        ? "border-primary bg-primary text-white"
-                        : "border-border text-text-body hover:border-primary bg-white"
-                    }`}
-                  >
+                  <option key={service} value={service}>
                     {service}
-                  </button>
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
 
             {/* Name and Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-base sm:text-lg font-bold text-text mb-2">
+                <label htmlFor="name" className="block text-sm font-bold text-text mb-2 uppercase tracking-wider">
                   Name *
                 </label>
                 <input
@@ -129,11 +162,11 @@ export function ContactForm() {
                   onChange={(e) => handleChange("name", e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light"
-                  placeholder="Your full name"
+                  placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-base sm:text-lg font-bold text-text mb-2">
+                <label htmlFor="email" className="block text-sm font-bold text-text mb-2 uppercase tracking-wider">
                   Email *
                 </label>
                 <input
@@ -143,77 +176,106 @@ export function ContactForm() {
                   onChange={(e) => handleChange("email", e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light"
-                  placeholder="your@email.com"
+                  placeholder="john@company.com"
                 />
               </div>
             </div>
 
-            {/* Project Description */}
+            {/* Company */}
             <div>
-              <label htmlFor="project" className="block text-base sm:text-lg font-bold text-text mb-2">
-                Tell us about your project *
+              <label htmlFor="company" className="block text-sm font-bold text-text mb-2 uppercase tracking-wider">
+                Company / Project Name
               </label>
-              <textarea
-                id="project"
-                value={formData.project}
-                onChange={(e) => handleChange("project", e.target.value)}
-                required
-                rows={5}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light resize-none"
-                placeholder="Describe your project, goals, and any specific requirements..."
+              <input
+                type="text"
+                id="company"
+                value={formData.company}
+                onChange={(e) => handleChange("company", e.target.value)}
+                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light"
+                placeholder="Your Company or Project"
               />
             </div>
 
-            {/* Budget */}
+            {/* Message */}
             <div>
-              <label className="block text-base sm:text-lg font-bold text-text mb-4">
-                Budget Range (Optional)
+              <label htmlFor="message" className="block text-sm font-bold text-text mb-2 uppercase tracking-wider">
+                Tell us about your project *
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {budgets.map((budget) => (
-                  <button
-                    key={budget}
-                    type="button"
-                    onClick={() => handleChange("budget", budget)}
-                    className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${formData.budget === budget
-                        ? "border-primary bg-primary text-white"
-                        : "border-border text-text-body hover:border-primary bg-white"
-                    }`}
-                  >
-                    {budget}
-                  </button>
-                ))}
-              </div>
+              <textarea
+                id="message"
+                value={formData.message}
+                onChange={(e) => handleChange("message", e.target.value)}
+                required
+                rows={5}
+                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white text-text-body placeholder-text-light resize-none"
+                placeholder="Describe your project, goals, timeline, and any specific requirements..."
+              />
             </div>
 
             {/* Submit Button */}
-            <div className="text-center">
+            <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary text-base sm:text-lg px-10 sm:px-12 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
               >
-                {isSubmitting ? "Sending Request..." : "Get Free Consultation"}
+                {isSubmitting ? "Sending..." : "Request Intro Call"}
               </button>
             </div>
-          </motion.form>
-        )}
+          </form>
+        </motion.div>
+
+        {/* Alternative Contact Methods */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-12"
+        >
+          <h2 className="text-2xl font-bold text-text mb-6 text-center">Or Reach Us Directly</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Email */}
+            <a
+              href="mailto:hello@syntaxleap.com"
+              className="bg-white rounded-xl p-6 border border-border hover:border-primary transition-all duration-300 hover:shadow-lg text-center group"
+            >
+              <Mail className="w-10 h-10 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-bold text-text mb-2">Email Us</h3>
+              <p className="text-sm text-primary font-semibold">hello@syntaxleap.com</p>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/923368486356"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-6 border border-border hover:border-primary transition-all duration-300 hover:shadow-lg text-center group"
+            >
+              <MessageCircle className="w-10 h-10 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-bold text-text mb-2">WhatsApp</h3>
+              <p className="text-sm text-primary font-semibold">+92 336 8486356</p>
+            </a>
+
+            
+          </div>
+        </motion.div>
 
         {/* Reassurance */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 sm:mt-16 bg-white rounded-xl p-6 sm:p-8 border border-border shadow-md"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-12 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-6 sm:p-8 border border-primary/20"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-sm text-text-light">Support Available</div>
+              <div className="text-2xl font-bold text-primary mb-2">24 Hours</div>
+              <div className="text-sm text-text-light">Response Time</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-accent mb-2">24hrs</div>
-              <div className="text-sm text-text-light">Response Time</div>
+              <div className="text-2xl font-bold text-primary mb-2">Free</div>
+              <div className="text-sm text-text-light">Consultation</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-primary mb-2">100%</div>

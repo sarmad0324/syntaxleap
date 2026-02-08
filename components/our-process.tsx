@@ -8,32 +8,32 @@ export function OurProcess() {
     {
       icon: Search,
       title: "Discovery",
-      description: "We analyze your business needs and identify AI opportunities that can drive real value."
+      description: "We kick off with a deep dive into your product vision, target users, and technical requirements."
     },
     {
       icon: Palette,
       title: "Design",
-      description: "Our team creates intuitive interfaces and user experiences optimized for AI-powered features."
+      description: "We create clean, intuitive interfaces focused on user experience and conversion."
     },
     {
       icon: Code,
       title: "Development",
-      description: "We build robust, scalable solutions using cutting-edge AI technologies and best practices."
+      description: "Sprint-based development with React, Next.js, or React Native. Clean code, scalable architecture."
     },
     {
       icon: TestTube,
       title: "Testing",
-      description: "We rigorously test every component to ensure quality, performance, and reliability before launch."
+      description: "Rigorous testing for quality, performance, and reliability before every release."
     },
     {
       icon: Rocket,
-      title: "Deployment",
-      description: "We launch your AI solution and provide ongoing support to ensure optimal performance."
+      title: "Launch & Support",
+      description: "We deploy to production and provide ongoing support, bug fixes, and feature development."
     }
   ]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-background">
+    <section id="process" className="py-16 sm:py-20 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,10 +43,10 @@ export function OurProcess() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-inter mb-6 text-text">
-            Our <span className="text-primary">Process</span>
+            How We <span className="text-primary">Work</span>
           </h2>
           <p className="text-lg sm:text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
-            We follow a proven methodology to deliver AI solutions that exceed expectations.
+            A proven process that delivers results. From initial discovery to ongoing support.
           </p>
         </motion.div>
 

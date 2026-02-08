@@ -42,32 +42,33 @@ export function AboutHero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center bg-blue-500/10 border border-blue-500/20 text-blue-400 px-6 py-3 rounded-full mb-8 font-semibold shadow-md"
+          className="inline-flex items-center bg-primary/10 border border-primary/20 text-primary px-6 py-3 rounded-full mb-8 font-semibold shadow-md"
         >
           <motion.span
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="w-2 h-2 bg-blue-400 rounded-full mr-3"
+            className="w-2 h-2 bg-primary rounded-full mr-3"
           />
-          Creativity meets technology
+          Founder-led, hands-on execution
         </motion.div>
         {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-plus-jakarta mb-6  leading-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold font-inter mb-6 text-text leading-tight"
         >
-          About <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">SyntaxLeap</span>
+          We Build Products <br />
+          <span className="text-primary">That Scale</span>
         </motion.h1>
         {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-12"
+          className="text-xl lg:text-2xl text-text-light leading-relaxed max-w-3xl mx-auto mb-12"
         >
-          We're on a mission to democratize artificial intelligence for businesses of all sizes. Our team of AI specialists helps startups and SMEs harness the power of machine learning to drive growth and innovation.
+          SyntaxLeap partners with startups and growing businesses to build production-ready products. We focus on quality, scalability, and long-term partnerships — not short-term gigs.
         </motion.p>
         {/* Animated Company Stats */}
         <motion.div
@@ -77,9 +78,9 @@ export function AboutHero() {
           transition={{ duration: 1, delay: 0.8 }}
         >
           {[
-            { number: "40+", label: "Team Members" },
-            { number: "300+", label: "Projects Completed" },
-            { number: "12", label: "Years of Experience" }
+            { number: "Senior", label: "Development Team" },
+            { number: "2-4 Week", label: "MVP Delivery" },
+            { number: "Long-term", label: "Partnerships" }
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -87,10 +88,10 @@ export function AboutHero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1 + (i * 0.1) }}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-gray-400 text-base lg:text-lg">{stat.label}</div>
+              <div className="text-3xl lg:text-4xl font-bold text-text mb-2">{stat.number}</div>
+              <div className="text-text-light text-base lg:text-lg">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

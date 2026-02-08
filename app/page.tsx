@@ -8,32 +8,32 @@ import { ShowcaseSection } from "@/components/showcase-section"
 import { Newsletter } from "@/components/newsletter"
 
 export const metadata: Metadata = {
-  title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
+  title: "SyntaxLeap - From MVP to Scale | Web, Mobile & AI Development",
   description:
-    "SyntaxLeap builds AI-driven digital products for startups and SMEs. We create intelligent web apps, mobile solutions, and provide remote AI teams to accelerate your business growth.",
+    "We build scalable, production-ready web and mobile products for startups and growing businesses using React, React Native, Next.js, and AI-powered Node.js backends.",
   keywords: [
-    "AI development agency",
-    "machine learning solutions",
-    "artificial intelligence",
-    "AI web apps",
-    "intelligent mobile apps",
-    "remote AI teams",
-    "startup AI solutions",
-    "SME digital transformation",
-    "custom AI development",
-    "AI-driven products",
+    "React development agency",
+    "Next.js development",
+    "React Native mobile apps",
+    "startup MVP development",
+    "product development agency",
+    "web app development",
+    "mobile app development",
+    "Node.js backend",
+    "Supabase development",
+    "startup development services",
   ],
   openGraph: {
-    title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
+    title: "SyntaxLeap - From MVP to Scale | Web, Mobile & AI Development",
     description:
-      "SyntaxLeap builds AI-driven digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
+      "Build scalable, production-ready products with React, React Native, and Next.js. We partner with startups and growing businesses.",
     url: "https://www.syntaxleap.info/",
     images: [
       {
         url: "https://www.syntaxleap.info/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "SyntaxLeap AI Development Agency",
+        alt: "SyntaxLeap Product Development Agency",
       },
     ],
   },

@@ -15,9 +15,9 @@ export function Footer() {
               <Image
                 src="/SyntaxLeap.png"
                 alt="SyntaxLeap"
-                width={150}
-                height={40}
-                className="brightness-0 invert"
+                width={60}
+                height={20}
+                
               />
             </Link>
             <p className="text-white/80 mb-6 max-w-md">

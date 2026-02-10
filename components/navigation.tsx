@@ -24,7 +24,7 @@ export function Navigation() {
     style={{overflow: 'visible'}}
   >
     <nav className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">
-      <div className="flex items-center justify-between h-24 sm:h-28 transition-all duration-300">
+      <div className="flex items-center justify-between h-16 sm:h-20 transition-all duration-300">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
@@ -35,8 +35,8 @@ export function Navigation() {
               <Image
                 src="/SyntaxLeap.png"
                 alt="SyntaxLeap - Web, Mobile & AI Development"
-                width={180}
-                height={62}
+                width={60}
+                height={20}
                 priority
               />
             </motion.div>

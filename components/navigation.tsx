@@ -33,12 +33,11 @@ export function Navigation() {
               className="relative flex items-center"
             >
               <Image
-                src="/Logo.svg"
-                alt="SyntaxLeap - AI-Powered Web & Mobile Development"
+                src="/SyntaxLeap.png"
+                alt="SyntaxLeap - Web, Mobile & AI Development"
                 width={180}
                 height={62}
                 priority
-               
               />
             </motion.div>
           </Link>

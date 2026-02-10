@@ -13,7 +13,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/Logo.svg"
+                src="/SyntaxLeap.png"
                 alt="SyntaxLeap"
                 width={150}
                 height={40}

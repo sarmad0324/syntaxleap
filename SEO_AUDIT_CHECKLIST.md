@@ -6,8 +6,8 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 ## Changes Made
 
 ### 1. Domain Migration
-- Updated all URLs from `syntaxleap.info` to `syntaxleap.com`
-- Updated email addresses from `hello@syntaxleap.info` to `hello@syntaxleap.com`
+- Updated all URLs to `syntaxleap.com`
+- Updated email addresses to `hello@syntaxleap.com`
 - Added redirects in `next.config.mjs` for old domain
 
 ### 2. Meta Tags and SEO
@@ -53,7 +53,7 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 - [ ] Test `robots.txt` at `https://www.syntaxleap.com/robots.txt`
 - [ ] Test `sitemap.xml` at `https://www.syntaxleap.com/sitemap.xml`
 - [ ] Verify all pages are included in sitemap
-- [ ] Test `manifest.json` at `https://www.syntaxleap.info/manifest.json`
+- [ ] Test `manifest.json` at `https://www.syntaxleap.com/manifest.json`
 
 ### 4. Structured Data
 - [ ] Test structured data using Google Rich Results Test

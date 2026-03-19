@@ -19,7 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.syntaxleap.info/"),
+  metadataBase: new URL("https://www.syntaxleap.com/"),
   title: {
     default: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     template: "%s | SyntaxLeap",
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
     "SME digital transformation",
     "custom AI development",
   ],
-  authors: [{ name: "SyntaxLeap", url: "https://www.syntaxleap.info/" }],
+  authors: [{ name: "SyntaxLeap", url: "https://www.syntaxleap.com/" }],
   openGraph: {
     type: "website",
-    url: "https://www.syntaxleap.info/",
+    url: "https://www.syntaxleap.com/",
     siteName: "SyntaxLeap",
     title: "SyntaxLeap -Expert in AI-Powered Web & Mobile Development",
     description:
       "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with intelligent solutions.",
     images: [
       {
-        url: "https://www.syntaxleap.info/SyntaxLeap.png",
+        url: "https://www.syntaxleap.com/SyntaxLeap.png",
         width: 512,
         height: 512,
         alt: "SyntaxLeap AI Development Agency",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
     description:
       "SyntaxLeap builds AI-Powered digital products for startups and SMEs. Accelerate your business growth with AI.",
-    images: ["https://www.syntaxleap.info/SyntaxLeap.png"],
+    images: ["https://www.syntaxleap.com/SyntaxLeap.png"],
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     google: "u_7bVNsFUzr4vrugz7yNh4M5sVlS9YvW8c-4z0q4QiM",
   },
   alternates: {
-    canonical: "https://www.syntaxleap.info/",
+    canonical: "https://www.syntaxleap.com/",
   },
   icons: {
     icon: [
@@ -109,10 +109,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "SyntaxLeap - Expert in AI-Powered Web & Mobile Development",
-              "url": "https://www.syntaxleap.info",
+              "url": "https://www.syntaxleap.com",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://www.syntaxleap.info/?s={search_term_string}",
+                "target": "https://www.syntaxleap.com/?s={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }

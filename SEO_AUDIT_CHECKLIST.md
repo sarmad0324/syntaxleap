@@ -6,8 +6,8 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 ## Changes Made
 
 ### 1. Domain Migration
-- Updated all URLs from `syntaxleap.info` to `syntaxleap.info`
-- Updated email addresses from `hello@syntaxleap.info` to `hello@syntaxleap.info`
+- Updated all URLs from `syntaxleap.info` to `syntaxleap.com`
+- Updated email addresses from `hello@syntaxleap.info` to `hello@syntaxleap.com`
 - Added redirects in `next.config.mjs` for old domain
 
 ### 2. Meta Tags and SEO
@@ -39,8 +39,8 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 ## Testing Checklist
 
 ### 1. Domain and Redirects
-- [ ] Test that `syntaxleap.info` loads correctly
-- [ ] Test that `syntaxleap.info` redirects to `syntaxleap.info`
+- [ ] Test that `syntaxleap.com` loads correctly
+- [ ] Test that `syntaxleap.com` redirects correctly
 - [ ] Verify all internal links use the new domain
 
 ### 2. SEO Meta Tags
@@ -50,8 +50,8 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 - [ ] Test Twitter Card tags using Twitter Card Validator
 
 ### 3. Technical SEO
-- [ ] Test `robots.txt` at `https://www.syntaxleap.info/robots.txt`
-- [ ] Test `sitemap.xml` at `https://www.syntaxleap.info/sitemap.xml`
+- [ ] Test `robots.txt` at `https://www.syntaxleap.com/robots.txt`
+- [ ] Test `sitemap.xml` at `https://www.syntaxleap.com/sitemap.xml`
 - [ ] Verify all pages are included in sitemap
 - [ ] Test `manifest.json` at `https://www.syntaxleap.info/manifest.json`
 
@@ -75,7 +75,7 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 
 ### 7. Contact Form
 - [ ] Test contact form submission
-- [ ] Verify emails are sent to `hello@syntaxleap.info`
+- [ ] Verify emails are sent to `hello@syntaxleap.com`
 - [ ] Test form validation
 
 ## Tools for Testing
@@ -164,7 +164,7 @@ This document outlines all the SEO improvements implemented for the SyntaxLeap w
 5. **Performance Monitoring**: Set up Google Analytics 4 and conversion tracking
 
 ## Contact Information for SEO
-- Primary Email: hello@syntaxleap.info
-- Website: https://www.syntaxleap.info/
+- Primary Email: hello@syntaxleap.com
+- Website: https://www.syntaxleap.com/
 - Search Console: Submit sitemap and monitor performance
 - Analytics: Track user behavior and conversions

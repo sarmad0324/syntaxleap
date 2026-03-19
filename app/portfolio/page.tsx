@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     title: "Portfolio & Case Studies | SyntaxLeap",
     description:
       "See how we've helped startups build scalable products with React, Next.js, and React Native.",
-    url: "https://www.syntaxleap.info/portfolio",
+    url: "https://www.syntaxleap.com/portfolio",
     images: [
       {
-        url: "https://www.syntaxleap.info/og-portfolio.jpg",
+        url: "https://www.syntaxleap.com/og-portfolio.jpg",
         width: 1200,
         height: 630,
         alt: "SyntaxLeap Portfolio & Case Studies",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.syntaxleap.info/portfolio",
+    canonical: "https://www.syntaxleap.com/portfolio",
   },
 }
 

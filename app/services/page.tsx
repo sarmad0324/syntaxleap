@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     title: "Our Services | Dedicated Development, MVP Build & AI Automation",
     description:
       "Dedicated teams, MVP builds, and AI automation for startups. React, Next.js, React Native development services.",
-    url: "https://www.syntaxleap.info/services",
+    url: "https://www.syntaxleap.com/services",
     images: [
       {
-        url: "https://www.syntaxleap.info/og-services.jpg",
+        url: "https://www.syntaxleap.com/og-services.jpg",
         width: 1200,
         height: 630,
         alt: "SyntaxLeap Development Services",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.syntaxleap.info/services",
+    canonical: "https://www.syntaxleap.com/services",
   },
 }
 

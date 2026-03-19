@@ -43,8 +43,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/syntaxleap.info/:path*',
-        destination: 'https://www.syntaxleap.info/:path*',
+        source: '/syntaxleap.com/:path*',
+        destination: 'https://www.syntaxleap.com/:path*',
         permanent: true,
       },
     ]

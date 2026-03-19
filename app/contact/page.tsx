@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     title: "Contact | Book a Call with SyntaxLeap",
     description:
       "Book a call or send a message. We respond within 24 hours.",
-    url: "https://www.syntaxleap.info/contact",
+    url: "https://www.syntaxleap.com/contact",
     images: [
       {
-        url: "https://www.syntaxleap.info/og-contact.jpg",
+        url: "https://www.syntaxleap.com/og-contact.jpg",
         width: 1200,
         height: 630,
         alt: "Contact SyntaxLeap",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.syntaxleap.info/contact",
+    canonical: "https://www.syntaxleap.com/contact",
   },
 }
 

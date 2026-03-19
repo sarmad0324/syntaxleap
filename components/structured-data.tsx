@@ -4,8 +4,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "SyntaxLeap",
-    url: "https://www.syntaxleap.info",
-    logo: "https://www.syntaxleap.info/SyntaxLeap.png",
+    url: "https://www.syntaxleap.com",
+    logo: "https://www.syntaxleap.com/SyntaxLeap.png",
     description: "Leading AI development agency specializing in neural networks, deep learning, intelligent automation, and cutting-edge artificial intelligence solutions that transform businesses.",
     foundingDate: "2022-01-01",
     industry: "Artificial Intelligence and Machine Learning Development",
@@ -55,10 +55,10 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "SyntaxLeap",
-    url: "https://www.syntaxleap.info",
+    url: "https://www.syntaxleap.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://www.syntaxleap.info/?s={search_term_string}",
+      target: "https://www.syntaxleap.com/?s={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -67,10 +67,10 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.syntaxleap.info/" },
-      { "@type": "ListItem", position: 2, name: "AI Services", item: "https://www.syntaxleap.info/services" },
-      { "@type": "ListItem", position: 3, name: "About AI Team", item: "https://www.syntaxleap.info/about" },
-      { "@type": "ListItem", position: 4, name: "AI Consultation", item: "https://www.syntaxleap.info/contact" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.syntaxleap.com/" },
+      { "@type": "ListItem", position: 2, name: "AI Services", item: "https://www.syntaxleap.com/services" },
+      { "@type": "ListItem", position: 3, name: "About AI Team", item: "https://www.syntaxleap.com/about" },
+      { "@type": "ListItem", position: 4, name: "AI Consultation", item: "https://www.syntaxleap.com/contact" },
     ],
   };
 
@@ -81,7 +81,7 @@ export default function StructuredData() {
     provider: {
       "@type": "Organization",
       name: "SyntaxLeap",
-      url: "https://www.syntaxleap.info"
+      url: "https://www.syntaxleap.com"
     },
     serviceType: "Artificial Intelligence Development",
     description: "Comprehensive AI development services including neural networks, machine learning, and intelligent automation solutions.",
